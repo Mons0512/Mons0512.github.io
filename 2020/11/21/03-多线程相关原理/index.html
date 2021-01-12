@@ -17,16 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Tag: Springboot | Hexo</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/tags/Springboot/index.html">
+  <title>多线程相关原理 | Hexo</title>
+  <meta name="description" content="多线程相关原理进程和线程计算器同时运行着记事本和音乐播放器，这就是两个进程；而音乐播放器中，运行着歌词和音乐播放、视频播放等，这些就是进程中的每个线程。 进程进程是线程的集合，由一个或多个线程组成 线程线程是操作系统运行调度的最小单位，是进程中最小运行单元 并行和并发并行并行依赖于多核处理器，如果我们的计算机处理器只有一个核，那就不可能实现并行。指同一时刻，有多条指令在多个处理器上同时执行。 如果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多线程相关原理">
+<meta property="og:url" content="http://example.com/2020/11/21/03-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="多线程相关原理进程和线程计算器同时运行着记事本和音乐播放器，这就是两个进程；而音乐播放器中，运行着歌词和音乐播放、视频播放等，这些就是进程中的每个线程。 进程进程是线程的集合，由一个或多个线程组成 线程线程是操作系统运行调度的最小单位，是进程中最小运行单元 并行和并发并行并行依赖于多核处理器，如果我们的计算机处理器只有一个核，那就不可能实现并行。指同一时刻，有多条指令在多个处理器上同时执行。 如果">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-21T02:23:12.000Z">
+<meta property="article:modified_time" content="2021-01-12T03:00:10.048Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="多线程">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/tags/Springboot/index.html">
+  <link rel="canonical" href="http://example.com/2020/11/21/03-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -340,92 +345,189 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-tags post-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">Tag: Springboot</h1>
-      <p class="text-muted hidden-xs">Total 2 articles</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/tags">All</a></li>
-          
-          <li><a href="/tags/爬虫-逆向-反爬/">爬虫 逆向 反爬</a></li>
-          
-          <li><a href="/tags/多线程/">多线程</a></li>
-          
-          <li><a href="/tags/Cookie-Session/">Cookie Session</a></li>
-          
-          <li><a href="/tags/Python-多线程/">Python 多线程</a></li>
-          
-          <li><a href="/tags/Python-多进程/">Python 多进程</a></li>
-          
-          <li><a href="/tags/Nginx/">Nginx</a></li>
-          
-          <li><a href="/tags/Stream/">Stream</a></li>
-          
-          <li><a href="/tags/Redis/">Redis</a></li>
-          
-          <li><a href="/tags/Springboot/">Springboot</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="row">
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-03-多线程相关原理" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
         
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2020-11-01T04:23:12.000Z" itemprop="datePublished">2020-11-01</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2020/11/01/Springboot%E6%95%B4%E5%90%88Redis/">Springboot整合Redis</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/Springboot/" class="label label-default mb">Springboot</a>
-     
-     
-   </div>
-   
-</article>
+  
+    <h1 class="article-title" itemprop="name">
+      多线程相关原理
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/11/21/03-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/" class="article-date">
+	  <time datetime="2020-11-21T02:23:12.000Z" itemprop="datePublished">2020-11-21</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a>
+  </span>
 
 
-</div>
+        
 
-<div class="col-md-6">
-    
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2020-11-01T02:23:12.000Z" itemprop="datePublished">2020-11-01</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2020/11/01/LocalDateTime%E6%97%A5%E6%9C%9F%E8%BD%AC%E6%8D%A2%E9%94%99%E8%AF%AF/">LocalDateTime日期转换错误</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/Springboot/" class="label label-default mb">Springboot</a>
-     
-     
-   </div>
-   
-</article>
-
-
-</div>
-
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/11/21/03-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/#comments" class="article-comment-link">Comments</a></span>
+        
       </div>
     </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="多线程相关原理"><a href="#多线程相关原理" class="headerlink" title="多线程相关原理"></a>多线程相关原理</h1><h2 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h2><p>计算器同时运行着记事本和音乐播放器，这就是两个进程；而音乐播放器中，运行着歌词和音乐播放、视频播放等，这些就是进程中的每个线程。</p>
+<h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>进程是线程的集合，由一个或多个线程组成</p>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p>线程是操作系统运行调度的最小单位，是进程中最小运行单元</p>
+<h2 id="并行和并发"><a href="#并行和并发" class="headerlink" title="并行和并发"></a>并行和并发</h2><h3 id="并行"><a href="#并行" class="headerlink" title="并行"></a>并行</h3><p>并行依赖于多核处理器，如果我们的计算机处理器只有一个核，那就不可能实现并行。指同一时刻，有多条指令在多个处理器上同时执行。</p>
+<p>如果系统处理器有多个核，当一个核在执行一个线程时，另一个核可以执行另一个线程，这样这两个线程就实现了并行执行，当然其他的线程也可能和另外的线程处在同一个核上执行，它们之间就是并发执行。具体的执行方式，就取决于操作系统的调度了。</p>
+<h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><p>同一时刻只有一条指令执行，但是多个线程的对应的指令被快速轮换地执行。</p>
+<p>比如一个处理器，它先执行线程 A 的指令一段时间，再执行线程 B 的指令一段时间，再切回到线程 A 执行一段时间。</p>
+<p>系统处理器需要同时运行多个线程，如果系统处理器只有一个核，那它只能通过并发的方式来运行这些线程。</p>
+<h2 id="多线程适用场景"><a href="#多线程适用场景" class="headerlink" title="多线程适用场景"></a>多线程适用场景</h2><p>在处理一些比较耗时的任务时，为了提升效率，可以利用阻塞的时间进而执行其他任务，从而提升整体执行效率。</p>
+<p>如：在查询数据库返回数据，网页等待过程中，利用多线程技术，执行其他线程任务，提升效率。</p>
+<h2 id="IO密集型任务"><a href="#IO密集型任务" class="headerlink" title="IO密集型任务"></a>IO密集型任务</h2><p>比如网络爬虫就是一个非常典型的例子，爬虫在向服务器发起请求之后，有一段时间必须要等待服务器的响应返回，这种任务就属于 IO 密集型任务。对于这种任务，如果我们启用多线程，处理器就可以在某个线程等待的过程中去处理其他的任务，从而提高整体的爬取效率。</p>
+<h2 id="计算密集型任务（CPU密集型任务）"><a href="#计算密集型任务（CPU密集型任务）" class="headerlink" title="计算密集型任务（CPU密集型任务）"></a>计算密集型任务（CPU密集型任务）</h2><p>顾名思义，就是任务的运行一直需要处理器的参与。此时如果我们开启了多线程，一个处理器从一个计算密集型任务切换到切换到另一个计算密集型任务上去，处理器依然不会停下来，始终会忙于计算，这样并不会节省总体的时间，因为需要处理的任务的计算总量是不变的。如果线程数目过多，反而还会在线程切换的过程中多耗费一些时间，整体效率会变低。</p>
+<p>所以，如果任务不全是计算密集型任务，我们可以使用多线程来提高程序整体的执行效率。尤其对于网络爬虫这种 IO 密集型任务来说，使用多线程会大大提高程序整体的爬取效率。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2020/11/21/03-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/" title="多线程相关原理" target="_blank" rel="external">http://example.com/2020/11/21/03-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">昵称</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
   </article>
-   
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/12/24/1.Nginx%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" title="Nginx负载均衡配置"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/11/21/02-cookie%E5%92%8Csession/" title="Cookie和Session"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -486,6 +588,37 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 

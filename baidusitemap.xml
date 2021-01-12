@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2020/11/21/05-python%E5%A4%9A%E8%BF%9B%E7%A8%8B/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2020/11/21/04-python%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2020/11/21/02-cookie%E5%92%8Csession/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2020/11/20/01-%E7%88%AC%E8%99%AB%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2020/11/21/03-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2020/09/12/6.Optional/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2020/09/12/5.Collect/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2020/09/12/4.FlatMap/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2020/09/12/2.Filter/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2020/09/12/1.%E6%B5%81%E5%92%8C%E9%9B%86%E5%90%88/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2020/09/12/3.Map/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2020/11/01/Springboot%E6%95%B4%E5%90%88Redis/</loc>
     <lastmod>2021-01-12</lastmod>
   </url>
