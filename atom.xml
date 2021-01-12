@@ -345,6 +345,31 @@
   </entry>
   
   <entry>
+    <title>Java8新特性Stream---FlatMap</title>
+    <link href="http://example.com/2020/09/12/4.FlatMap/"/>
+    <id>http://example.com/2020/09/12/4.FlatMap/</id>
+    <published>2020-09-12T02:23:12.000Z</published>
+    <updated>2021-01-12T02:53:21.296Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="flatmap"><a class="markdownIt-Anchor" href="#flatmap"></a> FlatMap</h1><h2 id="flatmap-2"><a class="markdownIt-Anchor" href="#flatmap-2"></a> FlatMap</h2><p><img src="https://mmbiz.qpic.cn/mmbiz_png/eQPyBffYbudSuicicrjavD8zvRricxoibmib2mTH0ZwA7Q9cD92mDgOW4EibkPtjibI0OiaaDr3Wqrl3le9GJUHa6X3zwQ/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" /></p><p>顾名思义，跟map差不多,更深层次的操作，但还是有区别的</p><p><strong>map和flat返回值不同</strong></p><p>Map 每个输入元素，都按照规则转换成为另外一个元素。</p><p>还有一些场景，是一对多映射关系的，这时需要 flatMap。</p><ul><li>Map一对一</li><li>Flatmap一对多</li></ul><p>map和flatMap的方法声明是不一样的</p><ul><li><r> Stream<r> map(Function mapper);</li><li><r> Stream<r> flatMap(Function&gt; mapper);</li></ul><p>map和flatMap的区别：我个人认为，flatMap的可以处理更深层次的数据，入参为多个list，结果可以返回为一个list，而map是一对一的，入参是多个list，结果返回必须是多个list。通俗的说，如果入参都是对象，那么flatMap可以操作对象里面的对象，而map只能操作第一层。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">flatMapString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        List&lt;PersonModel&gt; data = Data.getData();</span><br><span class="line">        <span class="comment">//返回类型不一样</span></span><br><span class="line">        List&lt;String&gt; collect = data.stream()</span><br><span class="line">                .flatMap(person -&gt; Arrays.stream(person.getName().split(<span class="string">&quot; &quot;</span>))).collect(toList());</span><br><span class="line"></span><br><span class="line">        List&lt;Stream&lt;String&gt;&gt; collect1 = data.stream()</span><br><span class="line">                .map(person -&gt; Arrays.stream(person.getName().split(<span class="string">&quot; &quot;</span>))).collect(toList());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//用map实现</span></span><br><span class="line">        List&lt;String&gt; collect2 = data.stream()</span><br><span class="line">                .map(person -&gt; person.getName().split(<span class="string">&quot; &quot;</span>))</span><br><span class="line">                .flatMap(Arrays::stream).collect(toList());</span><br><span class="line">        <span class="comment">//另一种方式</span></span><br><span class="line">        List&lt;String&gt; collect3 = data.stream()</span><br><span class="line">                .map(person -&gt; person.getName().split(<span class="string">&quot; &quot;</span>))</span><br><span class="line">                .flatMap(str -&gt; Arrays.asList(str).stream()).collect(toList());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;flatmap&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#flatmap&quot;&gt;&lt;/a&gt; FlatMap&lt;/h1&gt;
+&lt;h2 id=&quot;flatmap-2&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#flatm</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="http://example.com/categories/Java/"/>
+    
+    
+    <category term="Stream" scheme="http://example.com/tags/Stream/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java8新特性Stream---Collect</title>
     <link href="http://example.com/2020/09/12/5.Collect/"/>
     <id>http://example.com/2020/09/12/5.Collect/</id>
@@ -383,31 +408,6 @@
       
     <summary type="html">&lt;h1 id=&quot;optional&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#optional&quot;&gt;&lt;/a&gt; Optional&lt;/h1&gt;
 &lt;h2 id=&quot;optional-2&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#o</summary>
-      
-    
-    
-    
-    <category term="Java" scheme="http://example.com/categories/Java/"/>
-    
-    
-    <category term="Stream" scheme="http://example.com/tags/Stream/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java8新特性Stream---FlatMap</title>
-    <link href="http://example.com/2020/09/12/4.FlatMap/"/>
-    <id>http://example.com/2020/09/12/4.FlatMap/</id>
-    <published>2020-09-12T02:23:12.000Z</published>
-    <updated>2021-01-12T02:53:21.296Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="flatmap"><a class="markdownIt-Anchor" href="#flatmap"></a> FlatMap</h1><h2 id="flatmap-2"><a class="markdownIt-Anchor" href="#flatmap-2"></a> FlatMap</h2><p><img src="https://mmbiz.qpic.cn/mmbiz_png/eQPyBffYbudSuicicrjavD8zvRricxoibmib2mTH0ZwA7Q9cD92mDgOW4EibkPtjibI0OiaaDr3Wqrl3le9GJUHa6X3zwQ/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" /></p><p>顾名思义，跟map差不多,更深层次的操作，但还是有区别的</p><p><strong>map和flat返回值不同</strong></p><p>Map 每个输入元素，都按照规则转换成为另外一个元素。</p><p>还有一些场景，是一对多映射关系的，这时需要 flatMap。</p><ul><li>Map一对一</li><li>Flatmap一对多</li></ul><p>map和flatMap的方法声明是不一样的</p><ul><li><r> Stream<r> map(Function mapper);</li><li><r> Stream<r> flatMap(Function&gt; mapper);</li></ul><p>map和flatMap的区别：我个人认为，flatMap的可以处理更深层次的数据，入参为多个list，结果可以返回为一个list，而map是一对一的，入参是多个list，结果返回必须是多个list。通俗的说，如果入参都是对象，那么flatMap可以操作对象里面的对象，而map只能操作第一层。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">flatMapString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        List&lt;PersonModel&gt; data = Data.getData();</span><br><span class="line">        <span class="comment">//返回类型不一样</span></span><br><span class="line">        List&lt;String&gt; collect = data.stream()</span><br><span class="line">                .flatMap(person -&gt; Arrays.stream(person.getName().split(<span class="string">&quot; &quot;</span>))).collect(toList());</span><br><span class="line"></span><br><span class="line">        List&lt;Stream&lt;String&gt;&gt; collect1 = data.stream()</span><br><span class="line">                .map(person -&gt; Arrays.stream(person.getName().split(<span class="string">&quot; &quot;</span>))).collect(toList());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//用map实现</span></span><br><span class="line">        List&lt;String&gt; collect2 = data.stream()</span><br><span class="line">                .map(person -&gt; person.getName().split(<span class="string">&quot; &quot;</span>))</span><br><span class="line">                .flatMap(Arrays::stream).collect(toList());</span><br><span class="line">        <span class="comment">//另一种方式</span></span><br><span class="line">        List&lt;String&gt; collect3 = data.stream()</span><br><span class="line">                .map(person -&gt; person.getName().split(<span class="string">&quot; &quot;</span>))</span><br><span class="line">                .flatMap(str -&gt; Arrays.asList(str).stream()).collect(toList());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;flatmap&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#flatmap&quot;&gt;&lt;/a&gt; FlatMap&lt;/h1&gt;
-&lt;h2 id=&quot;flatmap-2&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#flatm</summary>
       
     
     
