@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2020/11/20/01-%E7%88%AC%E8%99%AB%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2021-01-12</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2020/11/21/05-python%E5%A4%9A%E8%BF%9B%E7%A8%8B/</loc>
     <lastmod>2021-01-12</lastmod>
   </url>
@@ -10,10 +14,6 @@
   </url>
   <url>
     <loc>http://example.com/2020/11/21/02-cookie%E5%92%8Csession/</loc>
-    <lastmod>2021-01-12</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2020/11/20/01-%E7%88%AC%E8%99%AB%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</loc>
     <lastmod>2021-01-12</lastmod>
   </url>
   <url>

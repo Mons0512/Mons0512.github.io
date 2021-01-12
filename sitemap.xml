@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2020/11/20/01-%E7%88%AC%E8%99%AB%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</loc>
+    
+    <lastmod>2021-01-12</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2020/11/21/05-python%E5%A4%9A%E8%BF%9B%E7%A8%8B/</loc>
     
     <lastmod>2021-01-12</lastmod>
@@ -17,13 +24,6 @@
   
   <url>
     <loc>http://example.com/2020/11/21/02-cookie%E5%92%8Csession/</loc>
-    
-    <lastmod>2021-01-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/11/20/01-%E7%88%AC%E8%99%AB%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</loc>
     
     <lastmod>2021-01-12</lastmod>
     
@@ -165,7 +165,7 @@
 
   
   <url>
-    <loc>http://example.com/tags/%E7%88%AC%E8%99%AB-%E9%80%86%E5%90%91-%E5%8F%8D%E7%88%AC/</loc>
+    <loc>http://example.com/tags/%E7%88%AC%E8%99%AB/</loc>
     <lastmod>2021-01-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -186,14 +186,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Python-%E5%A4%9A%E8%BF%9B%E7%A8%8B/</loc>
+    <loc>http://example.com/tags/Python-%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2021-01-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Python-%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <loc>http://example.com/tags/Python-%E5%A4%9A%E8%BF%9B%E7%A8%8B/</loc>
     <lastmod>2021-01-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
