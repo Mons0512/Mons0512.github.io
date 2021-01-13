@@ -381,17 +381,17 @@
 
               
                 
-<a href="/2020/09/12/4.FlatMap/" class="collection-item" target="_blank" itemprop="url">
+<a href="/2020/09/12/3.Map/" class="collection-item" target="_blank" itemprop="url">
   <time datetime="2020-09-12T02:23:12.000Z" itemprop="datePublished">2020-09-12</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Java8新特性Stream---FlatMap
+  <span>&nbsp;&nbsp;&nbsp;</span> Java8新特性Stream---Map
 </a>
 
 
               
                 
-<a href="/2020/09/12/3.Map/" class="collection-item" target="_blank" itemprop="url">
+<a href="/2020/09/12/4.FlatMap/" class="collection-item" target="_blank" itemprop="url">
   <time datetime="2020-09-12T02:23:12.000Z" itemprop="datePublished">2020-09-12</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Java8新特性Stream---Map
+  <span>&nbsp;&nbsp;&nbsp;</span> Java8新特性Stream---FlatMap
 </a>
 
 
@@ -521,7 +521,7 @@ var _hmt = _hmt || [];
 
 
 
-  <% if(theme.codeblock.copy_button.enable){ %>
+  
   <style>
     .copy-btn {
       display: inline-block;
@@ -566,11 +566,11 @@ var _hmt = _hmt || [];
       $('.highlight').each(function (i, e) {
         var $wrap = $('<div>').addClass('highlight-wrap')
         $(e).after($wrap)
-        $wrap.append($('<button>').addClass('copy-btn').append('<%= __("codeblock.copy_button") %>').on('click', function (e) {
+        $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
           var code = $(this).parent().find(".code")[0].innerText
-          <% if(theme.codeblock.copyright.enable){ %>
-              code += "<%= theme.codeblock.copyright.content %>"
-          <% } %>
+          
+              code += "\n/**\n* 感谢关注，代码出自\n* Hookk @ https://monsterco.gitee.io\n*/"
+          
           var ta = document.createElement('textarea')
           document.body.appendChild(ta)
           ta.style.position = 'absolute'
@@ -581,20 +581,20 @@ var _hmt = _hmt || [];
           ta.focus()
           var result = document.execCommand('copy')
           document.body.removeChild(ta)
-          <% if(theme.codeblock.copy_button.result){ %>
-            if(result)$(this).text('<%= __("codeblock.copy_success") %>')
-            else $(this).text('<%= __("codeblock.copy_failure") %>')
-          <% } %>
+          
+            if(result)$(this).text('复制成功')
+            else $(this).text('复制失败')
+          
           $(this).blur()
         })).on('mouseleave', function (e) {
           var $b = $(this).find('.copy-btn')
           setTimeout(function () {
-            $b.text('<%= __("codeblock.copy_button") %>')
+            $b.text('复制')
           }, 300)
         }).append(e)
       })
     })
   </script>
-<% } %>
+
 </body>
 </html>
