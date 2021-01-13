@@ -117,6 +117,31 @@
   </entry>
   
   <entry>
+    <title>Python实现多进程</title>
+    <link href="http://example.com/2020/11/21/05-python%E5%A4%9A%E8%BF%9B%E7%A8%8B/"/>
+    <id>http://example.com/2020/11/21/05-python%E5%A4%9A%E8%BF%9B%E7%A8%8B/</id>
+    <published>2020-11-21T02:23:12.000Z</published>
+    <updated>2021-01-12T03:01:43.766Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="python实现多进程"><a class="markdownIt-Anchor" href="#python实现多进程"></a> Python实现多进程</h1><p>Python 中的多线程是不能很好发挥多核优势的，如果想要发挥多核优势，最好还是使用多进程。</p><p>由于进程是线程的合集，并且一个进程可以包含多个线程，所以多进程的运行意味着有大于等于进程数量的线程运行着。</p><p>由于进程是系统进行调度和分配资源的独立单位，所以进程间的数据无法共享，如多进程之间共享一个全局变量，需要通过单独的机制来实现。</p><h2 id="进程和线程"><a class="markdownIt-Anchor" href="#进程和线程"></a> 进程和线程</h2><p>计算器同时运行着记事本和音乐播放器，这就是两个进程；而音乐播放器中，运行着歌词和音乐播放、视频播放等，这些就是进程中的每个线程。</p><h3 id="进程"><a class="markdownIt-Anchor" href="#进程"></a> 进程</h3><p>进程是线程的集合，由一个或多个线程组成</p><h3 id="线程"><a class="markdownIt-Anchor" href="#线程"></a> 线程</h3><p>线程是操作系统运行调度的最小单位，是进程中最小运行单元</p><h2 id="并行和并发"><a class="markdownIt-Anchor" href="#并行和并发"></a> 并行和并发</h2><h3 id="并行"><a class="markdownIt-Anchor" href="#并行"></a> 并行</h3><p>并行依赖于多核处理器，如果我们的计算机处理器只有一个核，那就不可能实现并行。指同一时刻，有多条指令在多个处理器上同时执行。</p><p>如果系统处理器有多个核，当一个核在执行一个线程时，另一个核可以执行另一个线程，这样这两个线程就实现了并行执行，当然其他的线程也可能和另外的线程处在同一个核上执行，它们之间就是并发执行。具体的执行方式，就取决于操作系统的调度了。</p><h3 id="并发"><a class="markdownIt-Anchor" href="#并发"></a> 并发</h3><p>同一时刻只有一条指令执行，但是多个线程的对应的指令被快速轮换地执行。</p><p>比如一个处理器，它先执行线程 A 的指令一段时间，再执行线程 B 的指令一段时间，再切回到线程 A 执行一段时间。</p><p>系统处理器需要同时运行多个线程，如果系统处理器只有一个核，那它只能通过并发的方式来运行这些线程。</p><h2 id="多线程适用场景"><a class="markdownIt-Anchor" href="#多线程适用场景"></a> 多线程适用场景</h2><p>在处理一些比较耗时的任务时，为了提升效率，可以利用阻塞的时间进而执行其他任务，从而提升整体执行效率。</p><p>如：在查询数据库返回数据，网页等待过程中，利用多线程技术，执行其他线程任务，提升效率。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;python实现多进程&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#python实现多进程&quot;&gt;&lt;/a&gt; Python实现多进程&lt;/h1&gt;
+&lt;p&gt;Python 中的多线程是不能很好发挥多核优势的，如果想要发挥多核优势，最好还是使用多进程</summary>
+      
+    
+    
+    
+    <category term="爬虫" scheme="http://example.com/categories/%E7%88%AC%E8%99%AB/"/>
+    
+    
+    <category term="Python 多进程" scheme="http://example.com/tags/Python-%E5%A4%9A%E8%BF%9B%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python实现多线程</title>
     <link href="http://example.com/2020/11/21/04-python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     <id>http://example.com/2020/11/21/04-python%E5%A4%9A%E7%BA%BF%E7%A8%8B/</id>
@@ -139,31 +164,6 @@
     
     
     <category term="Python 多线程" scheme="http://example.com/tags/Python-%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python实现多进程</title>
-    <link href="http://example.com/2020/11/21/05-python%E5%A4%9A%E8%BF%9B%E7%A8%8B/"/>
-    <id>http://example.com/2020/11/21/05-python%E5%A4%9A%E8%BF%9B%E7%A8%8B/</id>
-    <published>2020-11-21T02:23:12.000Z</published>
-    <updated>2021-01-12T03:01:43.766Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="python实现多进程"><a class="markdownIt-Anchor" href="#python实现多进程"></a> Python实现多进程</h1><p>Python 中的多线程是不能很好发挥多核优势的，如果想要发挥多核优势，最好还是使用多进程。</p><p>由于进程是线程的合集，并且一个进程可以包含多个线程，所以多进程的运行意味着有大于等于进程数量的线程运行着。</p><p>由于进程是系统进行调度和分配资源的独立单位，所以进程间的数据无法共享，如多进程之间共享一个全局变量，需要通过单独的机制来实现。</p><h2 id="进程和线程"><a class="markdownIt-Anchor" href="#进程和线程"></a> 进程和线程</h2><p>计算器同时运行着记事本和音乐播放器，这就是两个进程；而音乐播放器中，运行着歌词和音乐播放、视频播放等，这些就是进程中的每个线程。</p><h3 id="进程"><a class="markdownIt-Anchor" href="#进程"></a> 进程</h3><p>进程是线程的集合，由一个或多个线程组成</p><h3 id="线程"><a class="markdownIt-Anchor" href="#线程"></a> 线程</h3><p>线程是操作系统运行调度的最小单位，是进程中最小运行单元</p><h2 id="并行和并发"><a class="markdownIt-Anchor" href="#并行和并发"></a> 并行和并发</h2><h3 id="并行"><a class="markdownIt-Anchor" href="#并行"></a> 并行</h3><p>并行依赖于多核处理器，如果我们的计算机处理器只有一个核，那就不可能实现并行。指同一时刻，有多条指令在多个处理器上同时执行。</p><p>如果系统处理器有多个核，当一个核在执行一个线程时，另一个核可以执行另一个线程，这样这两个线程就实现了并行执行，当然其他的线程也可能和另外的线程处在同一个核上执行，它们之间就是并发执行。具体的执行方式，就取决于操作系统的调度了。</p><h3 id="并发"><a class="markdownIt-Anchor" href="#并发"></a> 并发</h3><p>同一时刻只有一条指令执行，但是多个线程的对应的指令被快速轮换地执行。</p><p>比如一个处理器，它先执行线程 A 的指令一段时间，再执行线程 B 的指令一段时间，再切回到线程 A 执行一段时间。</p><p>系统处理器需要同时运行多个线程，如果系统处理器只有一个核，那它只能通过并发的方式来运行这些线程。</p><h2 id="多线程适用场景"><a class="markdownIt-Anchor" href="#多线程适用场景"></a> 多线程适用场景</h2><p>在处理一些比较耗时的任务时，为了提升效率，可以利用阻塞的时间进而执行其他任务，从而提升整体执行效率。</p><p>如：在查询数据库返回数据，网页等待过程中，利用多线程技术，执行其他线程任务，提升效率。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;python实现多进程&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#python实现多进程&quot;&gt;&lt;/a&gt; Python实现多进程&lt;/h1&gt;
-&lt;p&gt;Python 中的多线程是不能很好发挥多核优势的，如果想要发挥多核优势，最好还是使用多进程</summary>
-      
-    
-    
-    
-    <category term="爬虫" scheme="http://example.com/categories/%E7%88%AC%E8%99%AB/"/>
-    
-    
-    <category term="Python 多进程" scheme="http://example.com/tags/Python-%E5%A4%9A%E8%BF%9B%E7%A8%8B/"/>
     
   </entry>
   
@@ -396,6 +396,31 @@
   </entry>
   
   <entry>
+    <title>如何解决消息队列的延时以及过期失效问题？</title>
+    <link href="http://example.com/2020/09/25/6%E3%80%81%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%9A%84%E5%BB%B6%E6%97%B6%E4%BB%A5%E5%8F%8A%E8%BF%87%E6%9C%9F%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2020/09/25/6%E3%80%81%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%9A%84%E5%BB%B6%E6%97%B6%E4%BB%A5%E5%8F%8A%E8%BF%87%E6%9C%9F%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/</id>
+    <published>2020-09-25T02:23:12.000Z</published>
+    <updated>2021-01-13T01:52:05.683Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="如何解决消息队列的延时以及过期失效问题"><a class="markdownIt-Anchor" href="#如何解决消息队列的延时以及过期失效问题"></a> 如何解决消息队列的延时以及过期失效问题？</h1><p>如何解决消息队列的延时以及过期失效问题？消息队列满了以后该怎么处理？有几百万消息持续积压几小时，说说怎么解决？</p><p>你看这问法，其实本质针对的场景，都是说，可能你的消费端出了问题，不消费了；或者消费的速度极其慢。接着就坑爹了，可能你的消息队列集群的磁盘都快写满了，都没人消费，这个时候怎么办？或者是这整个就积压了几个小时，你这个时候怎么办？或者是你积压的时间太长了，导致比如 RabbitMQ 设置了消息过期时间后就没了怎么办？</p><p>所以就这事儿，其实线上挺常见的，一般不出，一出就是大 case。一般常见于，举个例子，消费端每次消费之后要写 mysql，结果 mysql 挂了，消费端 hang 那儿了，不动了；或者是消费端出了个什么岔子，导致消费速度极其慢。</p><h2 id="大量消息在-mq-里积压了几个小时了还没解决"><a class="markdownIt-Anchor" href="#大量消息在-mq-里积压了几个小时了还没解决"></a> 大量消息在 mq 里积压了几个小时了还没解决</h2><p>几千万条数据在 MQ 里积压了七八个小时，从下午 4 点多，积压到了晚上 11 点多。这个是我们真实遇到过的一个场景，确实是线上故障了，这个时候要不然就是修复 consumer 的问题，让它恢复消费速度，然后傻傻的等待几个小时消费完毕。这个肯定不能在面试的时候说吧。</p><p>一个消费者一秒是 1000 条，一秒 3 个消费者是 3000 条，一分钟就是 18 万条。所以如果你积压了几百万到上千万的数据，即使消费者恢复了，也需要大概 1 小时的时间才能恢复过来。</p><p>一般这个时候，只能<code>临时紧急扩容</code>了，具体操作步骤和思路如下：</p><ul><li>先修复 consumer 的问题，确保其恢复消费速度，然后将现有 consumer 都停掉。</li><li>新建一个 topic，partition 是原来的 10 倍，临时建立好原先 10 倍的 queue 数量。</li><li>然后写一个临时的分发数据的 consumer 程序，这个程序部署上去消费积压的数据，<strong>消费之后不做耗时的处理</strong>，直接均匀轮询写入临时建立好的 10 倍数量的 queue。</li><li>接着临时征用 10 倍的机器来部署 consumer，每一批 consumer 消费一个临时 queue 的数据。这种做法相当于是临时将 queue 资源和 consumer 资源扩大 10 倍，以正常的 10 倍速度来消费数据。</li><li>等快速消费完积压数据之后，<strong>得恢复原先部署的架构</strong>，<strong>重新</strong>用原先的 consumer 机器来消费消息。</li></ul><h2 id="mq-中的消息过期失效了"><a class="markdownIt-Anchor" href="#mq-中的消息过期失效了"></a> mq 中的消息过期失效了</h2><p>假设你用的是 RabbitMQ，RabbtiMQ 是可以设置过期时间的，也就是 TTL。如果消息在 queue 中积压超过一定的时间就会被 RabbitMQ 给清理掉，这个数据就没了。那这就是第二个坑了。这就不是说数据会大量积压在 mq 里，而是<strong>大量的数据会直接搞丢</strong>。</p><p>这个情况下，就不是说要增加 consumer 消费积压的消息，因为实际上没啥积压，而是丢了大量的消息。我们可以采取一个方案，就是<strong>批量重导</strong>，这个我们之前线上也有类似的场景干过。就是大量积压的时候，我们当时就直接丢弃数据了，然后等过了高峰期以后，比如大家一起喝咖啡熬夜到晚上 12 点以后，用户都睡觉了。这个时候我们就开始写程序，将丢失的那批数据，写个临时程序，一点一点的查出来，然后重新灌入 mq 里面去，把白天丢的数据给他补回来。也只能是这样了。</p><p>假设 1 万个订单积压在 mq 里面，没有处理，其中 1000 个订单都丢了，你只能手动写程序把那 1000 个订单给查出来，手动发到 mq 里去再补一次。</p><h2 id="mq-都快写满了"><a class="markdownIt-Anchor" href="#mq-都快写满了"></a> mq 都快写满了</h2><p>如果消息积压在 mq 里，你很长时间都没有处理掉，此时导致 mq 都快写满了，咋办？这个还有别的办法吗？没有，谁让你第一个方案执行的太慢了，你临时写程序，接入数据来消费，<strong>消费一个丢弃一个，都不要了</strong>，快速消费掉所有的消息。然后走第二个方案，到了晚上再补数据吧。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;如何解决消息队列的延时以及过期失效问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#如何解决消息队列的延时以及过期失效问题&quot;&gt;&lt;/a&gt; 如何解决消息队列的延时以及过期失效问题？&lt;/h1&gt;
+&lt;p&gt;如何解决消息队列的延时以及过期失效问题？</summary>
+      
+    
+    
+    
+    <category term="消息队列" scheme="http://example.com/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+    
+    <category term="消息队列" scheme="http://example.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何设计一个消息队列？</title>
     <link href="http://example.com/2020/09/25/7%E3%80%81%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
     <id>http://example.com/2020/09/25/7%E3%80%81%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</id>
@@ -411,31 +436,6 @@
 &lt;p&gt;其实聊到这个问题，一般面试官要考察两块：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;你有没有对某一个消息队列做</summary>
-      
-    
-    
-    
-    <category term="消息队列" scheme="http://example.com/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
-    
-    
-    <category term="消息队列" scheme="http://example.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何解决消息队列的延时以及过期失效问题？</title>
-    <link href="http://example.com/2020/09/25/6%E3%80%81%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%9A%84%E5%BB%B6%E6%97%B6%E4%BB%A5%E5%8F%8A%E8%BF%87%E6%9C%9F%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/"/>
-    <id>http://example.com/2020/09/25/6%E3%80%81%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%9A%84%E5%BB%B6%E6%97%B6%E4%BB%A5%E5%8F%8A%E8%BF%87%E6%9C%9F%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/</id>
-    <published>2020-09-25T02:23:12.000Z</published>
-    <updated>2021-01-13T01:52:05.683Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="如何解决消息队列的延时以及过期失效问题"><a class="markdownIt-Anchor" href="#如何解决消息队列的延时以及过期失效问题"></a> 如何解决消息队列的延时以及过期失效问题？</h1><p>如何解决消息队列的延时以及过期失效问题？消息队列满了以后该怎么处理？有几百万消息持续积压几小时，说说怎么解决？</p><p>你看这问法，其实本质针对的场景，都是说，可能你的消费端出了问题，不消费了；或者消费的速度极其慢。接着就坑爹了，可能你的消息队列集群的磁盘都快写满了，都没人消费，这个时候怎么办？或者是这整个就积压了几个小时，你这个时候怎么办？或者是你积压的时间太长了，导致比如 RabbitMQ 设置了消息过期时间后就没了怎么办？</p><p>所以就这事儿，其实线上挺常见的，一般不出，一出就是大 case。一般常见于，举个例子，消费端每次消费之后要写 mysql，结果 mysql 挂了，消费端 hang 那儿了，不动了；或者是消费端出了个什么岔子，导致消费速度极其慢。</p><h2 id="大量消息在-mq-里积压了几个小时了还没解决"><a class="markdownIt-Anchor" href="#大量消息在-mq-里积压了几个小时了还没解决"></a> 大量消息在 mq 里积压了几个小时了还没解决</h2><p>几千万条数据在 MQ 里积压了七八个小时，从下午 4 点多，积压到了晚上 11 点多。这个是我们真实遇到过的一个场景，确实是线上故障了，这个时候要不然就是修复 consumer 的问题，让它恢复消费速度，然后傻傻的等待几个小时消费完毕。这个肯定不能在面试的时候说吧。</p><p>一个消费者一秒是 1000 条，一秒 3 个消费者是 3000 条，一分钟就是 18 万条。所以如果你积压了几百万到上千万的数据，即使消费者恢复了，也需要大概 1 小时的时间才能恢复过来。</p><p>一般这个时候，只能<code>临时紧急扩容</code>了，具体操作步骤和思路如下：</p><ul><li>先修复 consumer 的问题，确保其恢复消费速度，然后将现有 consumer 都停掉。</li><li>新建一个 topic，partition 是原来的 10 倍，临时建立好原先 10 倍的 queue 数量。</li><li>然后写一个临时的分发数据的 consumer 程序，这个程序部署上去消费积压的数据，<strong>消费之后不做耗时的处理</strong>，直接均匀轮询写入临时建立好的 10 倍数量的 queue。</li><li>接着临时征用 10 倍的机器来部署 consumer，每一批 consumer 消费一个临时 queue 的数据。这种做法相当于是临时将 queue 资源和 consumer 资源扩大 10 倍，以正常的 10 倍速度来消费数据。</li><li>等快速消费完积压数据之后，<strong>得恢复原先部署的架构</strong>，<strong>重新</strong>用原先的 consumer 机器来消费消息。</li></ul><h2 id="mq-中的消息过期失效了"><a class="markdownIt-Anchor" href="#mq-中的消息过期失效了"></a> mq 中的消息过期失效了</h2><p>假设你用的是 RabbitMQ，RabbtiMQ 是可以设置过期时间的，也就是 TTL。如果消息在 queue 中积压超过一定的时间就会被 RabbitMQ 给清理掉，这个数据就没了。那这就是第二个坑了。这就不是说数据会大量积压在 mq 里，而是<strong>大量的数据会直接搞丢</strong>。</p><p>这个情况下，就不是说要增加 consumer 消费积压的消息，因为实际上没啥积压，而是丢了大量的消息。我们可以采取一个方案，就是<strong>批量重导</strong>，这个我们之前线上也有类似的场景干过。就是大量积压的时候，我们当时就直接丢弃数据了，然后等过了高峰期以后，比如大家一起喝咖啡熬夜到晚上 12 点以后，用户都睡觉了。这个时候我们就开始写程序，将丢失的那批数据，写个临时程序，一点一点的查出来，然后重新灌入 mq 里面去，把白天丢的数据给他补回来。也只能是这样了。</p><p>假设 1 万个订单积压在 mq 里面，没有处理，其中 1000 个订单都丢了，你只能手动写程序把那 1000 个订单给查出来，手动发到 mq 里去再补一次。</p><h2 id="mq-都快写满了"><a class="markdownIt-Anchor" href="#mq-都快写满了"></a> mq 都快写满了</h2><p>如果消息积压在 mq 里，你很长时间都没有处理掉，此时导致 mq 都快写满了，咋办？这个还有别的办法吗？没有，谁让你第一个方案执行的太慢了，你临时写程序，接入数据来消费，<strong>消费一个丢弃一个，都不要了</strong>，快速消费掉所有的消息。然后走第二个方案，到了晚上再补数据吧。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;如何解决消息队列的延时以及过期失效问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#如何解决消息队列的延时以及过期失效问题&quot;&gt;&lt;/a&gt; 如何解决消息队列的延时以及过期失效问题？&lt;/h1&gt;
-&lt;p&gt;如何解决消息队列的延时以及过期失效问题？</summary>
       
     
     
