@@ -167,6 +167,29 @@
   </entry>
   
   <entry>
+    <title>Cookie和Session</title>
+    <link href="http://example.com/2020/11/21/02-cookie%E5%92%8Csession/"/>
+    <id>http://example.com/2020/11/21/02-cookie%E5%92%8Csession/</id>
+    <published>2020-11-21T02:23:12.000Z</published>
+    <updated>2021-01-14T04:27:02.087Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="cookie和session"><a class="markdownIt-Anchor" href="#cookie和session"></a> Cookie和Session</h1><h2 id="http无状态"><a class="markdownIt-Anchor" href="#http无状态"></a> Http无状态</h2><p>向服务器发起请求，得到服务器响应，服务器不会记录前后状态的改变。</p><p>这样就会导致，如果需要对前面的信息进行处理，需要重复发送请求，从而增加服务器负担、浪费资源。因此，需要维持前后状态改变，使得服务器能够识别客户端。</p><p>可以通过Cookie和Session实现这种Http连接维持状态。</p><h2 id="cookie"><a class="markdownIt-Anchor" href="#cookie"></a> Cookie</h2><p>Cookie存在于客户端，当用户首次登录系统时，服务端生成Cookie，客户端储存；下次访问系统时，会携带相关Cookie发送请求到服务端，服务端通过Cookie鉴别用户信息</p><h3 id="浏览器查看cookie属性"><a class="markdownIt-Anchor" href="#浏览器查看cookie属性"></a> 浏览器查看Cookie属性</h3><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkws9lttafj31sq0u0alv.jpg" alt="image-20201121143519068"  /><p><code>属性说明：</code></p><ol><li>name：名称，一旦创建不能修改</li><li>value：值，如果值为 Unicode 字符，需要为字符编码。如果值为二进制数据，则需要使用 BASE64 编码。</li><li>domain：能够访问该cookie的域名</li><li>path：cookie的使用路径，如果设置为 /path/，则只有路径为 /path/ 的页面可以访问该 Cookie。如果设置为 /，则本域名下的所有页面都可以访问该 Cookie</li><li>expires/max-age：过期时间</li><li>httponly：若此属性为 true，则只有在 HTTP Headers 中会带有此 Cookie 的信息，而不能通过 document.cookie 来访问此 Cookie</li><li>security：是否仅被使用安全协议传输，安全协议有 HTTPS、SSL 等</li></ol><h3 id="运用场景购物车-浏览记录-上次登录时间-记住密码等"><a class="markdownIt-Anchor" href="#运用场景购物车-浏览记录-上次登录时间-记住密码等"></a> 运用场景：购物车、浏览记录、上次登录时间、记住密码等</h3><h3 id="会话cookie和持久cookie表面上会话cookie指储存在浏览器内存中关闭浏览器则cookie失效持久cookie指储存在计算机硬盘能够持续使用-严格意义上没有区分会话cookie和持久cookie只是通过cookie的expires和max-age控制过期时间"><a class="markdownIt-Anchor" href="#会话cookie和持久cookie表面上会话cookie指储存在浏览器内存中关闭浏览器则cookie失效持久cookie指储存在计算机硬盘能够持续使用-严格意义上没有区分会话cookie和持久cookie只是通过cookie的expires和max-age控制过期时间"></a> 会话Cookie和持久Cookie：表面上，会话Cookie指储存在浏览器内存中，关闭浏览器则Cookie失效；持久Cookie指储存在计算机硬盘，能够持续使用。严格意义上，没有区分会话Cookie和持久Cookie，只是通过Cookie的expires和max age控制过期时间</h3><h2 id="session"><a class="markdownIt-Anchor" href="#session"></a> Session</h2><p>Session称之为会话（参照打电话的过程，从提起手机接听电话到挂断电话），存在于服务端，客户端发送的Cookie中储存着SESSIONID，通过SESSIONID，查找服务端对应的Session，实现用户信息认证</p><h3 id="session维持利用cookie维持状态当向服务器发送请求时cookie中储存对应用户的sessionid服务器通过sessionid查找用户session"><a class="markdownIt-Anchor" href="#session维持利用cookie维持状态当向服务器发送请求时cookie中储存对应用户的sessionid服务器通过sessionid查找用户session"></a> Session维持：利用Cookie维持状态，当向服务器发送请求时，Cookie中储存对应用户的SESSIONID，服务器通过SESSIONID查找用户Session</h3><h3 id="session过期在关闭浏览器时并不会告知服务端需要销毁session一般会设置session有效时间大部分网站使用会话cookie储存sessionidcookie过期后则服务端无法找到相应的session"><a class="markdownIt-Anchor" href="#session过期在关闭浏览器时并不会告知服务端需要销毁session一般会设置session有效时间大部分网站使用会话cookie储存sessionidcookie过期后则服务端无法找到相应的session"></a> Session过期：在关闭浏览器时，并不会告知服务端需要销毁Session，一般会设置Session有效时间；大部分网站使用会话Cookie储存SESSIONID，Cookie过期后则服务端无法找到相应的Session</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;cookie和session&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cookie和session&quot;&gt;&lt;/a&gt; Cookie和Session&lt;/h1&gt;
+&lt;h2 id=&quot;http无状态&quot;&gt;&lt;a class=&quot;markdownIt-A</summary>
+      
+    
+    
+    
+    <category term="爬虫" scheme="http://example.com/categories/%E7%88%AC%E8%99%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>多线程相关原理</title>
     <link href="http://example.com/2020/11/21/03-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/"/>
     <id>http://example.com/2020/11/21/03-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/</id>
@@ -188,29 +211,6 @@
     
     
     <category term="多线程" scheme="http://example.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Cookie和Session</title>
-    <link href="http://example.com/2020/11/21/02-cookie%E5%92%8Csession/"/>
-    <id>http://example.com/2020/11/21/02-cookie%E5%92%8Csession/</id>
-    <published>2020-11-21T02:23:12.000Z</published>
-    <updated>2021-01-14T04:27:02.087Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="cookie和session"><a class="markdownIt-Anchor" href="#cookie和session"></a> Cookie和Session</h1><h2 id="http无状态"><a class="markdownIt-Anchor" href="#http无状态"></a> Http无状态</h2><p>向服务器发起请求，得到服务器响应，服务器不会记录前后状态的改变。</p><p>这样就会导致，如果需要对前面的信息进行处理，需要重复发送请求，从而增加服务器负担、浪费资源。因此，需要维持前后状态改变，使得服务器能够识别客户端。</p><p>可以通过Cookie和Session实现这种Http连接维持状态。</p><h2 id="cookie"><a class="markdownIt-Anchor" href="#cookie"></a> Cookie</h2><p>Cookie存在于客户端，当用户首次登录系统时，服务端生成Cookie，客户端储存；下次访问系统时，会携带相关Cookie发送请求到服务端，服务端通过Cookie鉴别用户信息</p><h3 id="浏览器查看cookie属性"><a class="markdownIt-Anchor" href="#浏览器查看cookie属性"></a> 浏览器查看Cookie属性</h3><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkws9lttafj31sq0u0alv.jpg" alt="image-20201121143519068"  /><p><code>属性说明：</code></p><ol><li>name：名称，一旦创建不能修改</li><li>value：值，如果值为 Unicode 字符，需要为字符编码。如果值为二进制数据，则需要使用 BASE64 编码。</li><li>domain：能够访问该cookie的域名</li><li>path：cookie的使用路径，如果设置为 /path/，则只有路径为 /path/ 的页面可以访问该 Cookie。如果设置为 /，则本域名下的所有页面都可以访问该 Cookie</li><li>expires/max-age：过期时间</li><li>httponly：若此属性为 true，则只有在 HTTP Headers 中会带有此 Cookie 的信息，而不能通过 document.cookie 来访问此 Cookie</li><li>security：是否仅被使用安全协议传输，安全协议有 HTTPS、SSL 等</li></ol><h3 id="运用场景购物车-浏览记录-上次登录时间-记住密码等"><a class="markdownIt-Anchor" href="#运用场景购物车-浏览记录-上次登录时间-记住密码等"></a> 运用场景：购物车、浏览记录、上次登录时间、记住密码等</h3><h3 id="会话cookie和持久cookie表面上会话cookie指储存在浏览器内存中关闭浏览器则cookie失效持久cookie指储存在计算机硬盘能够持续使用-严格意义上没有区分会话cookie和持久cookie只是通过cookie的expires和max-age控制过期时间"><a class="markdownIt-Anchor" href="#会话cookie和持久cookie表面上会话cookie指储存在浏览器内存中关闭浏览器则cookie失效持久cookie指储存在计算机硬盘能够持续使用-严格意义上没有区分会话cookie和持久cookie只是通过cookie的expires和max-age控制过期时间"></a> 会话Cookie和持久Cookie：表面上，会话Cookie指储存在浏览器内存中，关闭浏览器则Cookie失效；持久Cookie指储存在计算机硬盘，能够持续使用。严格意义上，没有区分会话Cookie和持久Cookie，只是通过Cookie的expires和max age控制过期时间</h3><h2 id="session"><a class="markdownIt-Anchor" href="#session"></a> Session</h2><p>Session称之为会话（参照打电话的过程，从提起手机接听电话到挂断电话），存在于服务端，客户端发送的Cookie中储存着SESSIONID，通过SESSIONID，查找服务端对应的Session，实现用户信息认证</p><h3 id="session维持利用cookie维持状态当向服务器发送请求时cookie中储存对应用户的sessionid服务器通过sessionid查找用户session"><a class="markdownIt-Anchor" href="#session维持利用cookie维持状态当向服务器发送请求时cookie中储存对应用户的sessionid服务器通过sessionid查找用户session"></a> Session维持：利用Cookie维持状态，当向服务器发送请求时，Cookie中储存对应用户的SESSIONID，服务器通过SESSIONID查找用户Session</h3><h3 id="session过期在关闭浏览器时并不会告知服务端需要销毁session一般会设置session有效时间大部分网站使用会话cookie储存sessionidcookie过期后则服务端无法找到相应的session"><a class="markdownIt-Anchor" href="#session过期在关闭浏览器时并不会告知服务端需要销毁session一般会设置session有效时间大部分网站使用会话cookie储存sessionidcookie过期后则服务端无法找到相应的session"></a> Session过期：在关闭浏览器时，并不会告知服务端需要销毁Session，一般会设置Session有效时间；大部分网站使用会话Cookie储存SESSIONID，Cookie过期后则服务端无法找到相应的Session</h3>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;cookie和session&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cookie和session&quot;&gt;&lt;/a&gt; Cookie和Session&lt;/h1&gt;
-&lt;h2 id=&quot;http无状态&quot;&gt;&lt;a class=&quot;markdownIt-A</summary>
-      
-    
-    
-    
-    <category term="爬虫" scheme="http://example.com/categories/%E7%88%AC%E8%99%AB/"/>
-    
     
   </entry>
   
