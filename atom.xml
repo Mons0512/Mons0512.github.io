@@ -167,6 +167,29 @@
   </entry>
   
   <entry>
+    <title>Cookie和Session</title>
+    <link href="http://example.com/2020/11/21/02-cookie%E5%92%8Csession/"/>
+    <id>http://example.com/2020/11/21/02-cookie%E5%92%8Csession/</id>
+    <published>2020-11-21T02:23:12.000Z</published>
+    <updated>2021-01-14T04:27:02.087Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="cookie和session"><a class="markdownIt-Anchor" href="#cookie和session"></a> Cookie和Session</h1><h2 id="http无状态"><a class="markdownIt-Anchor" href="#http无状态"></a> Http无状态</h2><p>向服务器发起请求，得到服务器响应，服务器不会记录前后状态的改变。</p><p>这样就会导致，如果需要对前面的信息进行处理，需要重复发送请求，从而增加服务器负担、浪费资源。因此，需要维持前后状态改变，使得服务器能够识别客户端。</p><p>可以通过Cookie和Session实现这种Http连接维持状态。</p><h2 id="cookie"><a class="markdownIt-Anchor" href="#cookie"></a> Cookie</h2><p>Cookie存在于客户端，当用户首次登录系统时，服务端生成Cookie，客户端储存；下次访问系统时，会携带相关Cookie发送请求到服务端，服务端通过Cookie鉴别用户信息</p><h3 id="浏览器查看cookie属性"><a class="markdownIt-Anchor" href="#浏览器查看cookie属性"></a> 浏览器查看Cookie属性</h3><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkws9lttafj31sq0u0alv.jpg" alt="image-20201121143519068"  /><p><code>属性说明：</code></p><ol><li>name：名称，一旦创建不能修改</li><li>value：值，如果值为 Unicode 字符，需要为字符编码。如果值为二进制数据，则需要使用 BASE64 编码。</li><li>domain：能够访问该cookie的域名</li><li>path：cookie的使用路径，如果设置为 /path/，则只有路径为 /path/ 的页面可以访问该 Cookie。如果设置为 /，则本域名下的所有页面都可以访问该 Cookie</li><li>expires/max-age：过期时间</li><li>httponly：若此属性为 true，则只有在 HTTP Headers 中会带有此 Cookie 的信息，而不能通过 document.cookie 来访问此 Cookie</li><li>security：是否仅被使用安全协议传输，安全协议有 HTTPS、SSL 等</li></ol><h3 id="运用场景购物车-浏览记录-上次登录时间-记住密码等"><a class="markdownIt-Anchor" href="#运用场景购物车-浏览记录-上次登录时间-记住密码等"></a> 运用场景：购物车、浏览记录、上次登录时间、记住密码等</h3><h3 id="会话cookie和持久cookie表面上会话cookie指储存在浏览器内存中关闭浏览器则cookie失效持久cookie指储存在计算机硬盘能够持续使用-严格意义上没有区分会话cookie和持久cookie只是通过cookie的expires和max-age控制过期时间"><a class="markdownIt-Anchor" href="#会话cookie和持久cookie表面上会话cookie指储存在浏览器内存中关闭浏览器则cookie失效持久cookie指储存在计算机硬盘能够持续使用-严格意义上没有区分会话cookie和持久cookie只是通过cookie的expires和max-age控制过期时间"></a> 会话Cookie和持久Cookie：表面上，会话Cookie指储存在浏览器内存中，关闭浏览器则Cookie失效；持久Cookie指储存在计算机硬盘，能够持续使用。严格意义上，没有区分会话Cookie和持久Cookie，只是通过Cookie的expires和max age控制过期时间</h3><h2 id="session"><a class="markdownIt-Anchor" href="#session"></a> Session</h2><p>Session称之为会话（参照打电话的过程，从提起手机接听电话到挂断电话），存在于服务端，客户端发送的Cookie中储存着SESSIONID，通过SESSIONID，查找服务端对应的Session，实现用户信息认证</p><h3 id="session维持利用cookie维持状态当向服务器发送请求时cookie中储存对应用户的sessionid服务器通过sessionid查找用户session"><a class="markdownIt-Anchor" href="#session维持利用cookie维持状态当向服务器发送请求时cookie中储存对应用户的sessionid服务器通过sessionid查找用户session"></a> Session维持：利用Cookie维持状态，当向服务器发送请求时，Cookie中储存对应用户的SESSIONID，服务器通过SESSIONID查找用户Session</h3><h3 id="session过期在关闭浏览器时并不会告知服务端需要销毁session一般会设置session有效时间大部分网站使用会话cookie储存sessionidcookie过期后则服务端无法找到相应的session"><a class="markdownIt-Anchor" href="#session过期在关闭浏览器时并不会告知服务端需要销毁session一般会设置session有效时间大部分网站使用会话cookie储存sessionidcookie过期后则服务端无法找到相应的session"></a> Session过期：在关闭浏览器时，并不会告知服务端需要销毁Session，一般会设置Session有效时间；大部分网站使用会话Cookie储存SESSIONID，Cookie过期后则服务端无法找到相应的Session</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;cookie和session&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cookie和session&quot;&gt;&lt;/a&gt; Cookie和Session&lt;/h1&gt;
+&lt;h2 id=&quot;http无状态&quot;&gt;&lt;a class=&quot;markdownIt-A</summary>
+      
+    
+    
+    
+    <category term="爬虫" scheme="http://example.com/categories/%E7%88%AC%E8%99%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>多线程相关原理</title>
     <link href="http://example.com/2020/11/21/03-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/"/>
     <id>http://example.com/2020/11/21/03-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/</id>
@@ -188,29 +211,6 @@
     
     
     <category term="多线程" scheme="http://example.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Cookie和Session</title>
-    <link href="http://example.com/2020/11/21/02-cookie%E5%92%8Csession/"/>
-    <id>http://example.com/2020/11/21/02-cookie%E5%92%8Csession/</id>
-    <published>2020-11-21T02:23:12.000Z</published>
-    <updated>2021-01-14T04:27:02.087Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="cookie和session"><a class="markdownIt-Anchor" href="#cookie和session"></a> Cookie和Session</h1><h2 id="http无状态"><a class="markdownIt-Anchor" href="#http无状态"></a> Http无状态</h2><p>向服务器发起请求，得到服务器响应，服务器不会记录前后状态的改变。</p><p>这样就会导致，如果需要对前面的信息进行处理，需要重复发送请求，从而增加服务器负担、浪费资源。因此，需要维持前后状态改变，使得服务器能够识别客户端。</p><p>可以通过Cookie和Session实现这种Http连接维持状态。</p><h2 id="cookie"><a class="markdownIt-Anchor" href="#cookie"></a> Cookie</h2><p>Cookie存在于客户端，当用户首次登录系统时，服务端生成Cookie，客户端储存；下次访问系统时，会携带相关Cookie发送请求到服务端，服务端通过Cookie鉴别用户信息</p><h3 id="浏览器查看cookie属性"><a class="markdownIt-Anchor" href="#浏览器查看cookie属性"></a> 浏览器查看Cookie属性</h3><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkws9lttafj31sq0u0alv.jpg" alt="image-20201121143519068"  /><p><code>属性说明：</code></p><ol><li>name：名称，一旦创建不能修改</li><li>value：值，如果值为 Unicode 字符，需要为字符编码。如果值为二进制数据，则需要使用 BASE64 编码。</li><li>domain：能够访问该cookie的域名</li><li>path：cookie的使用路径，如果设置为 /path/，则只有路径为 /path/ 的页面可以访问该 Cookie。如果设置为 /，则本域名下的所有页面都可以访问该 Cookie</li><li>expires/max-age：过期时间</li><li>httponly：若此属性为 true，则只有在 HTTP Headers 中会带有此 Cookie 的信息，而不能通过 document.cookie 来访问此 Cookie</li><li>security：是否仅被使用安全协议传输，安全协议有 HTTPS、SSL 等</li></ol><h3 id="运用场景购物车-浏览记录-上次登录时间-记住密码等"><a class="markdownIt-Anchor" href="#运用场景购物车-浏览记录-上次登录时间-记住密码等"></a> 运用场景：购物车、浏览记录、上次登录时间、记住密码等</h3><h3 id="会话cookie和持久cookie表面上会话cookie指储存在浏览器内存中关闭浏览器则cookie失效持久cookie指储存在计算机硬盘能够持续使用-严格意义上没有区分会话cookie和持久cookie只是通过cookie的expires和max-age控制过期时间"><a class="markdownIt-Anchor" href="#会话cookie和持久cookie表面上会话cookie指储存在浏览器内存中关闭浏览器则cookie失效持久cookie指储存在计算机硬盘能够持续使用-严格意义上没有区分会话cookie和持久cookie只是通过cookie的expires和max-age控制过期时间"></a> 会话Cookie和持久Cookie：表面上，会话Cookie指储存在浏览器内存中，关闭浏览器则Cookie失效；持久Cookie指储存在计算机硬盘，能够持续使用。严格意义上，没有区分会话Cookie和持久Cookie，只是通过Cookie的expires和max age控制过期时间</h3><h2 id="session"><a class="markdownIt-Anchor" href="#session"></a> Session</h2><p>Session称之为会话（参照打电话的过程，从提起手机接听电话到挂断电话），存在于服务端，客户端发送的Cookie中储存着SESSIONID，通过SESSIONID，查找服务端对应的Session，实现用户信息认证</p><h3 id="session维持利用cookie维持状态当向服务器发送请求时cookie中储存对应用户的sessionid服务器通过sessionid查找用户session"><a class="markdownIt-Anchor" href="#session维持利用cookie维持状态当向服务器发送请求时cookie中储存对应用户的sessionid服务器通过sessionid查找用户session"></a> Session维持：利用Cookie维持状态，当向服务器发送请求时，Cookie中储存对应用户的SESSIONID，服务器通过SESSIONID查找用户Session</h3><h3 id="session过期在关闭浏览器时并不会告知服务端需要销毁session一般会设置session有效时间大部分网站使用会话cookie储存sessionidcookie过期后则服务端无法找到相应的session"><a class="markdownIt-Anchor" href="#session过期在关闭浏览器时并不会告知服务端需要销毁session一般会设置session有效时间大部分网站使用会话cookie储存sessionidcookie过期后则服务端无法找到相应的session"></a> Session过期：在关闭浏览器时，并不会告知服务端需要销毁Session，一般会设置Session有效时间；大部分网站使用会话Cookie储存SESSIONID，Cookie过期后则服务端无法找到相应的Session</h3>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;cookie和session&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cookie和session&quot;&gt;&lt;/a&gt; Cookie和Session&lt;/h1&gt;
-&lt;h2 id=&quot;http无状态&quot;&gt;&lt;a class=&quot;markdownIt-A</summary>
-      
-    
-    
-    
-    <category term="爬虫" scheme="http://example.com/categories/%E7%88%AC%E8%99%AB/"/>
-    
     
   </entry>
   
@@ -469,31 +469,6 @@
   </entry>
   
   <entry>
-    <title>如何解决消息队列的延时以及过期失效问题？</title>
-    <link href="http://example.com/2020/09/25/6%E3%80%81%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%9A%84%E5%BB%B6%E6%97%B6%E4%BB%A5%E5%8F%8A%E8%BF%87%E6%9C%9F%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/"/>
-    <id>http://example.com/2020/09/25/6%E3%80%81%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%9A%84%E5%BB%B6%E6%97%B6%E4%BB%A5%E5%8F%8A%E8%BF%87%E6%9C%9F%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/</id>
-    <published>2020-09-25T02:23:12.000Z</published>
-    <updated>2021-01-14T04:28:22.713Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="如何解决消息队列的延时以及过期失效问题"><a class="markdownIt-Anchor" href="#如何解决消息队列的延时以及过期失效问题"></a> 如何解决消息队列的延时以及过期失效问题？</h1><p>如何解决消息队列的延时以及过期失效问题？消息队列满了以后该怎么处理？有几百万消息持续积压几小时，说说怎么解决？</p><p>你看这问法，其实本质针对的场景，都是说，可能你的消费端出了问题，不消费了；或者消费的速度极其慢。接着就坑爹了，可能你的消息队列集群的磁盘都快写满了，都没人消费，这个时候怎么办？或者是这整个就积压了几个小时，你这个时候怎么办？或者是你积压的时间太长了，导致比如 RabbitMQ 设置了消息过期时间后就没了怎么办？</p><p>所以就这事儿，其实线上挺常见的，一般不出，一出就是大 case。一般常见于，举个例子，消费端每次消费之后要写 mysql，结果 mysql 挂了，消费端 hang 那儿了，不动了；或者是消费端出了个什么岔子，导致消费速度极其慢。</p><h2 id="大量消息在-mq-里积压了几个小时了还没解决"><a class="markdownIt-Anchor" href="#大量消息在-mq-里积压了几个小时了还没解决"></a> 大量消息在 mq 里积压了几个小时了还没解决</h2><p>几千万条数据在 MQ 里积压了七八个小时，从下午 4 点多，积压到了晚上 11 点多。这个是我们真实遇到过的一个场景，确实是线上故障了，这个时候要不然就是修复 consumer 的问题，让它恢复消费速度，然后傻傻的等待几个小时消费完毕。这个肯定不能在面试的时候说吧。</p><p>一个消费者一秒是 1000 条，一秒 3 个消费者是 3000 条，一分钟就是 18 万条。所以如果你积压了几百万到上千万的数据，即使消费者恢复了，也需要大概 1 小时的时间才能恢复过来。</p><p>一般这个时候，只能<code>临时紧急扩容</code>了，具体操作步骤和思路如下：</p><ul><li>先修复 consumer 的问题，确保其恢复消费速度，然后将现有 consumer 都停掉。</li><li>新建一个 topic，partition 是原来的 10 倍，临时建立好原先 10 倍的 queue 数量。</li><li>然后写一个临时的分发数据的 consumer 程序，这个程序部署上去消费积压的数据，<strong>消费之后不做耗时的处理</strong>，直接均匀轮询写入临时建立好的 10 倍数量的 queue。</li><li>接着临时征用 10 倍的机器来部署 consumer，每一批 consumer 消费一个临时 queue 的数据。这种做法相当于是临时将 queue 资源和 consumer 资源扩大 10 倍，以正常的 10 倍速度来消费数据。</li><li>等快速消费完积压数据之后，<strong>得恢复原先部署的架构</strong>，<strong>重新</strong>用原先的 consumer 机器来消费消息。</li></ul><h2 id="mq-中的消息过期失效了"><a class="markdownIt-Anchor" href="#mq-中的消息过期失效了"></a> mq 中的消息过期失效了</h2><p>假设你用的是 RabbitMQ，RabbtiMQ 是可以设置过期时间的，也就是 TTL。如果消息在 queue 中积压超过一定的时间就会被 RabbitMQ 给清理掉，这个数据就没了。那这就是第二个坑了。这就不是说数据会大量积压在 mq 里，而是<strong>大量的数据会直接搞丢</strong>。</p><p>这个情况下，就不是说要增加 consumer 消费积压的消息，因为实际上没啥积压，而是丢了大量的消息。我们可以采取一个方案，就是<strong>批量重导</strong>，这个我们之前线上也有类似的场景干过。就是大量积压的时候，我们当时就直接丢弃数据了，然后等过了高峰期以后，比如大家一起喝咖啡熬夜到晚上 12 点以后，用户都睡觉了。这个时候我们就开始写程序，将丢失的那批数据，写个临时程序，一点一点的查出来，然后重新灌入 mq 里面去，把白天丢的数据给他补回来。也只能是这样了。</p><p>假设 1 万个订单积压在 mq 里面，没有处理，其中 1000 个订单都丢了，你只能手动写程序把那 1000 个订单给查出来，手动发到 mq 里去再补一次。</p><h2 id="mq-都快写满了"><a class="markdownIt-Anchor" href="#mq-都快写满了"></a> mq 都快写满了</h2><p>如果消息积压在 mq 里，你很长时间都没有处理掉，此时导致 mq 都快写满了，咋办？这个还有别的办法吗？没有，谁让你第一个方案执行的太慢了，你临时写程序，接入数据来消费，<strong>消费一个丢弃一个，都不要了</strong>，快速消费掉所有的消息。然后走第二个方案，到了晚上再补数据吧。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;如何解决消息队列的延时以及过期失效问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#如何解决消息队列的延时以及过期失效问题&quot;&gt;&lt;/a&gt; 如何解决消息队列的延时以及过期失效问题？&lt;/h1&gt;
-&lt;p&gt;如何解决消息队列的延时以及过期失效问题？</summary>
-      
-    
-    
-    
-    <category term="消息队列" scheme="http://example.com/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
-    
-    
-    <category term="消息队列" scheme="http://example.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
     <title>如何保证消息的顺序性？</title>
     <link href="http://example.com/2020/09/25/5%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%80%A7/"/>
     <id>http://example.com/2020/09/25/5%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%80%A7/</id>
@@ -507,6 +482,31 @@
       
     <summary type="html">&lt;h1 id=&quot;如何保证消息的顺序性&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#如何保证消息的顺序性&quot;&gt;&lt;/a&gt; 如何保证消息的顺序性？&lt;/h1&gt;
 &lt;h2 id=&quot;rabbitmq&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; hre</summary>
+      
+    
+    
+    
+    <category term="消息队列" scheme="http://example.com/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+    
+    <category term="消息队列" scheme="http://example.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何解决消息队列的延时以及过期失效问题？</title>
+    <link href="http://example.com/2020/09/25/6%E3%80%81%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%9A%84%E5%BB%B6%E6%97%B6%E4%BB%A5%E5%8F%8A%E8%BF%87%E6%9C%9F%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2020/09/25/6%E3%80%81%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%9A%84%E5%BB%B6%E6%97%B6%E4%BB%A5%E5%8F%8A%E8%BF%87%E6%9C%9F%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/</id>
+    <published>2020-09-25T02:23:12.000Z</published>
+    <updated>2021-01-14T04:28:22.713Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="如何解决消息队列的延时以及过期失效问题"><a class="markdownIt-Anchor" href="#如何解决消息队列的延时以及过期失效问题"></a> 如何解决消息队列的延时以及过期失效问题？</h1><p>如何解决消息队列的延时以及过期失效问题？消息队列满了以后该怎么处理？有几百万消息持续积压几小时，说说怎么解决？</p><p>你看这问法，其实本质针对的场景，都是说，可能你的消费端出了问题，不消费了；或者消费的速度极其慢。接着就坑爹了，可能你的消息队列集群的磁盘都快写满了，都没人消费，这个时候怎么办？或者是这整个就积压了几个小时，你这个时候怎么办？或者是你积压的时间太长了，导致比如 RabbitMQ 设置了消息过期时间后就没了怎么办？</p><p>所以就这事儿，其实线上挺常见的，一般不出，一出就是大 case。一般常见于，举个例子，消费端每次消费之后要写 mysql，结果 mysql 挂了，消费端 hang 那儿了，不动了；或者是消费端出了个什么岔子，导致消费速度极其慢。</p><h2 id="大量消息在-mq-里积压了几个小时了还没解决"><a class="markdownIt-Anchor" href="#大量消息在-mq-里积压了几个小时了还没解决"></a> 大量消息在 mq 里积压了几个小时了还没解决</h2><p>几千万条数据在 MQ 里积压了七八个小时，从下午 4 点多，积压到了晚上 11 点多。这个是我们真实遇到过的一个场景，确实是线上故障了，这个时候要不然就是修复 consumer 的问题，让它恢复消费速度，然后傻傻的等待几个小时消费完毕。这个肯定不能在面试的时候说吧。</p><p>一个消费者一秒是 1000 条，一秒 3 个消费者是 3000 条，一分钟就是 18 万条。所以如果你积压了几百万到上千万的数据，即使消费者恢复了，也需要大概 1 小时的时间才能恢复过来。</p><p>一般这个时候，只能<code>临时紧急扩容</code>了，具体操作步骤和思路如下：</p><ul><li>先修复 consumer 的问题，确保其恢复消费速度，然后将现有 consumer 都停掉。</li><li>新建一个 topic，partition 是原来的 10 倍，临时建立好原先 10 倍的 queue 数量。</li><li>然后写一个临时的分发数据的 consumer 程序，这个程序部署上去消费积压的数据，<strong>消费之后不做耗时的处理</strong>，直接均匀轮询写入临时建立好的 10 倍数量的 queue。</li><li>接着临时征用 10 倍的机器来部署 consumer，每一批 consumer 消费一个临时 queue 的数据。这种做法相当于是临时将 queue 资源和 consumer 资源扩大 10 倍，以正常的 10 倍速度来消费数据。</li><li>等快速消费完积压数据之后，<strong>得恢复原先部署的架构</strong>，<strong>重新</strong>用原先的 consumer 机器来消费消息。</li></ul><h2 id="mq-中的消息过期失效了"><a class="markdownIt-Anchor" href="#mq-中的消息过期失效了"></a> mq 中的消息过期失效了</h2><p>假设你用的是 RabbitMQ，RabbtiMQ 是可以设置过期时间的，也就是 TTL。如果消息在 queue 中积压超过一定的时间就会被 RabbitMQ 给清理掉，这个数据就没了。那这就是第二个坑了。这就不是说数据会大量积压在 mq 里，而是<strong>大量的数据会直接搞丢</strong>。</p><p>这个情况下，就不是说要增加 consumer 消费积压的消息，因为实际上没啥积压，而是丢了大量的消息。我们可以采取一个方案，就是<strong>批量重导</strong>，这个我们之前线上也有类似的场景干过。就是大量积压的时候，我们当时就直接丢弃数据了，然后等过了高峰期以后，比如大家一起喝咖啡熬夜到晚上 12 点以后，用户都睡觉了。这个时候我们就开始写程序，将丢失的那批数据，写个临时程序，一点一点的查出来，然后重新灌入 mq 里面去，把白天丢的数据给他补回来。也只能是这样了。</p><p>假设 1 万个订单积压在 mq 里面，没有处理，其中 1000 个订单都丢了，你只能手动写程序把那 1000 个订单给查出来，手动发到 mq 里去再补一次。</p><h2 id="mq-都快写满了"><a class="markdownIt-Anchor" href="#mq-都快写满了"></a> mq 都快写满了</h2><p>如果消息积压在 mq 里，你很长时间都没有处理掉，此时导致 mq 都快写满了，咋办？这个还有别的办法吗？没有，谁让你第一个方案执行的太慢了，你临时写程序，接入数据来消费，<strong>消费一个丢弃一个，都不要了</strong>，快速消费掉所有的消息。然后走第二个方案，到了晚上再补数据吧。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;如何解决消息队列的延时以及过期失效问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#如何解决消息队列的延时以及过期失效问题&quot;&gt;&lt;/a&gt; 如何解决消息队列的延时以及过期失效问题？&lt;/h1&gt;
+&lt;p&gt;如何解决消息队列的延时以及过期失效问题？</summary>
       
     
     
