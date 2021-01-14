@@ -346,31 +346,6 @@
   </entry>
   
   <entry>
-    <title>如何保证消息的顺序性？</title>
-    <link href="http://example.com/2020/09/25/5%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%80%A7/"/>
-    <id>http://example.com/2020/09/25/5%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%80%A7/</id>
-    <published>2020-09-25T02:23:12.000Z</published>
-    <updated>2021-01-13T01:51:53.316Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="如何保证消息的顺序性"><a class="markdownIt-Anchor" href="#如何保证消息的顺序性"></a> 如何保证消息的顺序性？</h1><h2 id="rabbitmq"><a class="markdownIt-Anchor" href="#rabbitmq"></a> RabbitMQ</h2><p>我举个例子，我们以前做过一个 mysql <code>binlog</code> 同步的系统，压力还是非常大的，日同步数据要达到上亿，就是说数据从一个 mysql 库原封不动地同步到另一个 mysql 库里面去（mysql -&gt; mysql）。常见的一点在于说比如大数据 team，就需要同步一个 mysql 库过来，对公司的业务系统的数据做各种复杂的操作。</p><p>你在 mysql 里增删改一条数据，对应出来了增删改 3 条 <code>binlog</code> 日志，接着这三条 <code>binlog</code> 发送到 MQ 里面，再消费出来依次执行，起码得保证人家是按照顺序来的吧？不然本来是：增加、修改、删除；你愣是换了顺序给执行成删除、修改、增加，不全错了么。</p><p>本来这个数据同步过来，应该最后这个数据被删除了；结果你搞错了这个顺序，最后这个数据保留下来了，数据同步就出错了。</p><p>先看看顺序会错乱的俩场景：</p><ul><li><strong>RabbitMQ</strong>：一个 queue，多个 consumer。比如，生产者向 RabbitMQ 里发送了三条数据，顺序依次是 data1/data2/data3，压入的是 RabbitMQ 的一个内存队列。有三个消费者分别从 MQ 中消费这三条数据中的一条，结果消费者 2 先执行完操作，把 data2 存入数据库，然后是 data1/data3。这不明显乱了。</li></ul><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gj40w75c6ej30re0rgabz.jpg" alt="image-20200926141206052" style="zoom: 50%;" /><h2 id="kafka"><a class="markdownIt-Anchor" href="#kafka"></a> Kafka</h2><ul><li><strong>Kafka</strong>：比如说我们建了一个 topic，有三个 partition。生产者在写的时候，其实可以指定一个 key，比如说我们指定了某个订单 id 作为 key，那么这个订单相关的数据，一定会被分发到同一个 partition 中去，而且这个 partition 中的数据一定是有顺序的。<br />消费者从 partition 中取出来数据的时候，也一定是有顺序的。到这里，顺序还是 ok 的，没有错乱。接着，我们在消费者里可能会搞<strong>多个线程来并发处理消息</strong>。因为如果消费者是单线程消费处理，而处理比较耗时的话，比如处理一条消息耗时几十 ms，那么 1 秒钟只能处理几十条消息，这吞吐量太低了。而多个线程并发跑的话，顺序可能就乱掉了。</li></ul><img src="https://doocs.gitee.io/advanced-java/docs/high-concurrency/images/kafka-order-01.png" alt="kafka-order-01" style="zoom:67%;" /><hr /><p>解决方法：</p><h2 id="rabbitmq-2"><a class="markdownIt-Anchor" href="#rabbitmq-2"></a> RabbitMQ</h2><p>拆分多个 queue，每个 queue 一个 consumer，就是多一些 queue 而已，确实是麻烦点；或者就一个 queue 但是对应一个 consumer，然后这个 consumer 内部用内存队列做排队，然后分发给底层不同的 worker 来处理。</p><img src="https://doocs.gitee.io/advanced-java/docs/high-concurrency/images/rabbitmq-order-02.png" alt="rabbitmq-order-02" style="zoom:67%;" /><h2 id="kafka-2"><a class="markdownIt-Anchor" href="#kafka-2"></a> Kafka</h2><ul><li>一个 topic，一个 partition，一个 consumer，内部单线程消费，单线程吞吐量太低，一般不会用这个。</li><li>写 N 个内存 queue，具有相同 key 的数据都到同一个内存 queue；然后对于 N 个线程，每个线程分别消费一个内存 queue 即可，这样就能保证顺序性。</li></ul><img src="https://doocs.gitee.io/advanced-java/docs/high-concurrency/images/kafka-order-02.png" alt="kafka-order-02" style="zoom:67%;" />]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;如何保证消息的顺序性&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#如何保证消息的顺序性&quot;&gt;&lt;/a&gt; 如何保证消息的顺序性？&lt;/h1&gt;
-&lt;h2 id=&quot;rabbitmq&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; hre</summary>
-      
-    
-    
-    
-    <category term="消息队列" scheme="http://example.com/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
-    
-    
-    <category term="消息队列" scheme="http://example.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
     <title>如何保证消息的可靠性传输？</title>
     <link href="http://example.com/2020/09/25/4%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7%E4%BC%A0%E8%BE%93/"/>
     <id>http://example.com/2020/09/25/4%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7%E4%BC%A0%E8%BE%93/</id>
@@ -384,6 +359,31 @@
       
     <summary type="html">&lt;h1 id=&quot;如何保证消息的可靠性传输&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#如何保证消息的可靠性传输&quot;&gt;&lt;/a&gt; 如何保证消息的可靠性传输？&lt;/h1&gt;
 &lt;h2 id=&quot;如何处理消息丢失&quot;&gt;&lt;a class=&quot;markdownIt-Ancho</summary>
+      
+    
+    
+    
+    <category term="消息队列" scheme="http://example.com/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+    
+    <category term="消息队列" scheme="http://example.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何保证消息的顺序性？</title>
+    <link href="http://example.com/2020/09/25/5%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%80%A7/"/>
+    <id>http://example.com/2020/09/25/5%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%80%A7/</id>
+    <published>2020-09-25T02:23:12.000Z</published>
+    <updated>2021-01-13T01:51:53.316Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="如何保证消息的顺序性"><a class="markdownIt-Anchor" href="#如何保证消息的顺序性"></a> 如何保证消息的顺序性？</h1><h2 id="rabbitmq"><a class="markdownIt-Anchor" href="#rabbitmq"></a> RabbitMQ</h2><p>我举个例子，我们以前做过一个 mysql <code>binlog</code> 同步的系统，压力还是非常大的，日同步数据要达到上亿，就是说数据从一个 mysql 库原封不动地同步到另一个 mysql 库里面去（mysql -&gt; mysql）。常见的一点在于说比如大数据 team，就需要同步一个 mysql 库过来，对公司的业务系统的数据做各种复杂的操作。</p><p>你在 mysql 里增删改一条数据，对应出来了增删改 3 条 <code>binlog</code> 日志，接着这三条 <code>binlog</code> 发送到 MQ 里面，再消费出来依次执行，起码得保证人家是按照顺序来的吧？不然本来是：增加、修改、删除；你愣是换了顺序给执行成删除、修改、增加，不全错了么。</p><p>本来这个数据同步过来，应该最后这个数据被删除了；结果你搞错了这个顺序，最后这个数据保留下来了，数据同步就出错了。</p><p>先看看顺序会错乱的俩场景：</p><ul><li><strong>RabbitMQ</strong>：一个 queue，多个 consumer。比如，生产者向 RabbitMQ 里发送了三条数据，顺序依次是 data1/data2/data3，压入的是 RabbitMQ 的一个内存队列。有三个消费者分别从 MQ 中消费这三条数据中的一条，结果消费者 2 先执行完操作，把 data2 存入数据库，然后是 data1/data3。这不明显乱了。</li></ul><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gj40w75c6ej30re0rgabz.jpg" alt="image-20200926141206052" style="zoom: 50%;" /><h2 id="kafka"><a class="markdownIt-Anchor" href="#kafka"></a> Kafka</h2><ul><li><strong>Kafka</strong>：比如说我们建了一个 topic，有三个 partition。生产者在写的时候，其实可以指定一个 key，比如说我们指定了某个订单 id 作为 key，那么这个订单相关的数据，一定会被分发到同一个 partition 中去，而且这个 partition 中的数据一定是有顺序的。<br />消费者从 partition 中取出来数据的时候，也一定是有顺序的。到这里，顺序还是 ok 的，没有错乱。接着，我们在消费者里可能会搞<strong>多个线程来并发处理消息</strong>。因为如果消费者是单线程消费处理，而处理比较耗时的话，比如处理一条消息耗时几十 ms，那么 1 秒钟只能处理几十条消息，这吞吐量太低了。而多个线程并发跑的话，顺序可能就乱掉了。</li></ul><img src="https://doocs.gitee.io/advanced-java/docs/high-concurrency/images/kafka-order-01.png" alt="kafka-order-01" style="zoom:67%;" /><hr /><p>解决方法：</p><h2 id="rabbitmq-2"><a class="markdownIt-Anchor" href="#rabbitmq-2"></a> RabbitMQ</h2><p>拆分多个 queue，每个 queue 一个 consumer，就是多一些 queue 而已，确实是麻烦点；或者就一个 queue 但是对应一个 consumer，然后这个 consumer 内部用内存队列做排队，然后分发给底层不同的 worker 来处理。</p><img src="https://doocs.gitee.io/advanced-java/docs/high-concurrency/images/rabbitmq-order-02.png" alt="rabbitmq-order-02" style="zoom:67%;" /><h2 id="kafka-2"><a class="markdownIt-Anchor" href="#kafka-2"></a> Kafka</h2><ul><li>一个 topic，一个 partition，一个 consumer，内部单线程消费，单线程吞吐量太低，一般不会用这个。</li><li>写 N 个内存 queue，具有相同 key 的数据都到同一个内存 queue；然后对于 N 个线程，每个线程分别消费一个内存 queue 即可，这样就能保证顺序性。</li></ul><img src="https://doocs.gitee.io/advanced-java/docs/high-concurrency/images/kafka-order-02.png" alt="kafka-order-02" style="zoom:67%;" />]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;如何保证消息的顺序性&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#如何保证消息的顺序性&quot;&gt;&lt;/a&gt; 如何保证消息的顺序性？&lt;/h1&gt;
+&lt;h2 id=&quot;rabbitmq&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; hre</summary>
       
     
     
@@ -474,6 +474,31 @@
   </entry>
   
   <entry>
+    <title>Java8新特性Stream---Filter</title>
+    <link href="http://example.com/2020/09/12/2.Filter/"/>
+    <id>http://example.com/2020/09/12/2.Filter/</id>
+    <published>2020-09-12T02:23:12.000Z</published>
+    <updated>2021-01-12T02:53:10.296Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="filter"><a class="markdownIt-Anchor" href="#filter"></a> Filter</h1><h2 id="filter-2"><a class="markdownIt-Anchor" href="#filter-2"></a> Filter</h2><p><img src="https://mmbiz.qpic.cn/mmbiz_png/eQPyBffYbudSuicicrjavD8zvRricxoibmib2lS7AjCBczfquoKhbZkV07XvT5qVP8TiakzHCKncoQLQdTf1ib59qyHIQ/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" /></p><ul><li>遍历数据并检查其中的元素时使用。</li><li>filter接受一个函数作为参数，该函数用Lambda表达式表示。</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 过滤所有的男性</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fiterSex</span><span class="params">()</span></span>&#123;</span><br><span class="line">        List&lt;PersonModel&gt; data = Data.getData();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//old</span></span><br><span class="line">        List&lt;PersonModel&gt; temp=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (PersonModel person:data) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;男&quot;</span>.equals(person.getSex()))&#123;</span><br><span class="line">                temp.add(person);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(temp);</span><br><span class="line">      </span><br><span class="line">        <span class="comment">//new</span></span><br><span class="line">        List&lt;PersonModel&gt; collect = data</span><br><span class="line">                .stream()</span><br><span class="line">                .filter(person -&gt; <span class="string">&quot;男&quot;</span>.equals(person.getSex()))</span><br><span class="line">                .collect(toList());</span><br><span class="line">        System.out.println(collect);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 过滤所有的男性 并且小于20岁</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fiterSexAndAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        List&lt;PersonModel&gt; data = Data.getData();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//old</span></span><br><span class="line">        List&lt;PersonModel&gt; temp=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (PersonModel person:data) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;男&quot;</span>.equals(person.getSex())&amp;&amp;person.getAge()&lt;<span class="number">20</span>)&#123;</span><br><span class="line">                temp.add(person);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//new 1</span></span><br><span class="line">        List&lt;PersonModel&gt; collect = data</span><br><span class="line">                .stream()</span><br><span class="line">                .filter(person -&gt; &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="string">&quot;男&quot;</span>.equals(person.getSex())&amp;&amp;person.getAge()&lt;<span class="number">20</span>)&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                &#125;)</span><br><span class="line">                .collect(toList());</span><br><span class="line">      </span><br><span class="line">        <span class="comment">//new 2</span></span><br><span class="line">        List&lt;PersonModel&gt; collect1 = data</span><br><span class="line">                .stream()</span><br><span class="line">                .filter(person -&gt; (<span class="string">&quot;男&quot;</span>.equals(person.getSex())&amp;&amp;person.getAge()&lt;<span class="number">20</span>))</span><br><span class="line">                .collect(toList());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;filter&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#filter&quot;&gt;&lt;/a&gt; Filter&lt;/h1&gt;
+&lt;h2 id=&quot;filter-2&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#filter-2&quot;</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="http://example.com/categories/Java/"/>
+    
+    
+    <category term="Stream" scheme="http://example.com/tags/Stream/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java8新特性Stream---Map</title>
     <link href="http://example.com/2020/09/12/3.Map/"/>
     <id>http://example.com/2020/09/12/3.Map/</id>
@@ -488,31 +513,6 @@
     <summary type="html">&lt;h1 id=&quot;map&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#map&quot;&gt;&lt;/a&gt; Map&lt;/h1&gt;
 &lt;h2 id=&quot;map-2&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#map-2&quot;&gt;&lt;/a&gt; Map&lt;/h2&gt;
 </summary>
-      
-    
-    
-    
-    <category term="Java" scheme="http://example.com/categories/Java/"/>
-    
-    
-    <category term="Stream" scheme="http://example.com/tags/Stream/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java8新特性Stream---Filter</title>
-    <link href="http://example.com/2020/09/12/2.Filter/"/>
-    <id>http://example.com/2020/09/12/2.Filter/</id>
-    <published>2020-09-12T02:23:12.000Z</published>
-    <updated>2021-01-12T02:53:10.296Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="filter"><a class="markdownIt-Anchor" href="#filter"></a> Filter</h1><h2 id="filter-2"><a class="markdownIt-Anchor" href="#filter-2"></a> Filter</h2><p><img src="https://mmbiz.qpic.cn/mmbiz_png/eQPyBffYbudSuicicrjavD8zvRricxoibmib2lS7AjCBczfquoKhbZkV07XvT5qVP8TiakzHCKncoQLQdTf1ib59qyHIQ/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" /></p><ul><li>遍历数据并检查其中的元素时使用。</li><li>filter接受一个函数作为参数，该函数用Lambda表达式表示。</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 过滤所有的男性</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fiterSex</span><span class="params">()</span></span>&#123;</span><br><span class="line">        List&lt;PersonModel&gt; data = Data.getData();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//old</span></span><br><span class="line">        List&lt;PersonModel&gt; temp=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (PersonModel person:data) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;男&quot;</span>.equals(person.getSex()))&#123;</span><br><span class="line">                temp.add(person);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(temp);</span><br><span class="line">      </span><br><span class="line">        <span class="comment">//new</span></span><br><span class="line">        List&lt;PersonModel&gt; collect = data</span><br><span class="line">                .stream()</span><br><span class="line">                .filter(person -&gt; <span class="string">&quot;男&quot;</span>.equals(person.getSex()))</span><br><span class="line">                .collect(toList());</span><br><span class="line">        System.out.println(collect);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 过滤所有的男性 并且小于20岁</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fiterSexAndAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        List&lt;PersonModel&gt; data = Data.getData();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//old</span></span><br><span class="line">        List&lt;PersonModel&gt; temp=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (PersonModel person:data) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;男&quot;</span>.equals(person.getSex())&amp;&amp;person.getAge()&lt;<span class="number">20</span>)&#123;</span><br><span class="line">                temp.add(person);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//new 1</span></span><br><span class="line">        List&lt;PersonModel&gt; collect = data</span><br><span class="line">                .stream()</span><br><span class="line">                .filter(person -&gt; &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="string">&quot;男&quot;</span>.equals(person.getSex())&amp;&amp;person.getAge()&lt;<span class="number">20</span>)&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                &#125;)</span><br><span class="line">                .collect(toList());</span><br><span class="line">      </span><br><span class="line">        <span class="comment">//new 2</span></span><br><span class="line">        List&lt;PersonModel&gt; collect1 = data</span><br><span class="line">                .stream()</span><br><span class="line">                .filter(person -&gt; (<span class="string">&quot;男&quot;</span>.equals(person.getSex())&amp;&amp;person.getAge()&lt;<span class="number">20</span>))</span><br><span class="line">                .collect(toList());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;filter&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#filter&quot;&gt;&lt;/a&gt; Filter&lt;/h1&gt;
-&lt;h2 id=&quot;filter-2&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#filter-2&quot;</summary>
       
     
     
