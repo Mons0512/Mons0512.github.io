@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hookk的Blog</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-01-18T03:15:14.963Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Hookk</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Github工作流自动签到获取京豆</title>
+    <link href="http://example.com/2021/01/15/Github%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%87%AA%E5%8A%A8%E7%AD%BE%E5%88%B0%E8%8E%B7%E5%8F%96%E4%BA%AC%E8%B1%86/"/>
+    <id>http://example.com/2021/01/15/Github%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%87%AA%E5%8A%A8%E7%AD%BE%E5%88%B0%E8%8E%B7%E5%8F%96%E4%BA%AC%E8%B1%86/</id>
+    <published>2021-01-15T02:33:40.000Z</published>
+    <updated>2021-01-18T03:15:14.963Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;博客地址：&lt;a href=&quot;https://monsterco.gitee.io/&quot;&gt;https://monsterco.gitee.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本操作教程基于Github Action工作流，无需使用手机、软件等，请放心食用。&lt;/p&gt;
+&lt;p&gt;前提：&lt;/p</summary>
+      
+    
+    
+    
+    <category term="薅羊毛" scheme="http://example.com/categories/%E8%96%85%E7%BE%8A%E6%AF%9B/"/>
+    
+    
+    <category term="Github Action" scheme="http://example.com/tags/Github-Action/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES的分布式架构原理是什么？</title>
+    <link href="http://example.com/2021/01/10/1%E3%80%81ES%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84%E5%8E%9F%E7%90%86/"/>
+    <id>http://example.com/2021/01/10/1%E3%80%81ES%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84%E5%8E%9F%E7%90%86/</id>
+    <published>2021-01-10T02:23:12.000Z</published>
+    <updated>2021-01-14T06:14:39.063Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;es的分布式架构原理是什么&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#es的分布式架构原理是什么&quot;&gt;&lt;/a&gt; ES的分布式架构原理是什么？&lt;/h1&gt;
+&lt;p&gt;在搜索这块，lucene 是最流行的搜索库。几年前业内一般都问，你了解 lu</summary>
+      
+    
+    
+    
+    <category term="全文检索" scheme="http://example.com/categories/%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2/"/>
+    
+    
+    <category term="Elasticsearch" scheme="http://example.com/tags/Elasticsearch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES写入数据的原理是什么？</title>
+    <link href="http://example.com/2021/01/10/2%E3%80%81ES%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8E%9F%E7%90%86/"/>
+    <id>http://example.com/2021/01/10/2%E3%80%81ES%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8E%9F%E7%90%86/</id>
+    <published>2021-01-10T02:23:12.000Z</published>
+    <updated>2021-01-14T06:14:44.071Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;es写入数据的原理是什么&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#es写入数据的原理是什么&quot;&gt;&lt;/a&gt; ES写入数据的原理是什么？&lt;/h1&gt;
+&lt;h2 id=&quot;es写入数据过程&quot;&gt;&lt;a class=&quot;markdownIt-Ancho</summary>
+      
+    
+    
+    
+    <category term="全文检索" scheme="http://example.com/categories/%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2/"/>
+    
+    
+    <category term="Elasticsearch" scheme="http://example.com/tags/Elasticsearch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES如何提高查询效率？</title>
+    <link href="http://example.com/2021/01/10/3%E3%80%81ES%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E6%9F%A5%E8%AF%A2%E6%95%88%E7%8E%87/"/>
+    <id>http://example.com/2021/01/10/3%E3%80%81ES%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E6%9F%A5%E8%AF%A2%E6%95%88%E7%8E%87/</id>
+    <published>2021-01-10T02:23:12.000Z</published>
+    <updated>2021-01-14T06:14:49.847Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;es如何提高查询效率&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#es如何提高查询效率&quot;&gt;&lt;/a&gt; ES如何提高查询效率？&lt;/h1&gt;
+&lt;p&gt;这个问题是肯定要问的，说白了，就是看你有没有实际干过 es，因为啥？其实 es 性能并没有你想</summary>
+      
+    
+    
+    
+    <category term="全文检索" scheme="http://example.com/categories/%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2/"/>
+    
+    
+    <category term="Elasticsearch" scheme="http://example.com/tags/Elasticsearch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生产集群的部署架构是什么？</title>
+    <link href="http://example.com/2021/01/10/4%E3%80%81ES%20%E7%94%9F%E4%BA%A7%E9%9B%86%E7%BE%A4%E7%9A%84%E9%83%A8%E7%BD%B2%E6%9E%B6%E6%9E%84/"/>
+    <id>http://example.com/2021/01/10/4%E3%80%81ES%20%E7%94%9F%E4%BA%A7%E9%9B%86%E7%BE%A4%E7%9A%84%E9%83%A8%E7%BD%B2%E6%9E%B6%E6%9E%84/</id>
+    <published>2021-01-10T02:23:12.000Z</published>
+    <updated>2021-01-14T06:15:12.638Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;es-生产集群的部署架构是什么&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#es-生产集群的部署架构是什么&quot;&gt;&lt;/a&gt; ES 生产集群的部署架构是什么？&lt;/h1&gt;
+&lt;p&gt;ES 生产集群的部署架构是什么？每个索引的数据量大概有多少？每个</summary>
+      
+    
+    
+    
+    <category term="全文检索" scheme="http://example.com/categories/%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2/"/>
+    
+    
+    <category term="Elasticsearch" scheme="http://example.com/tags/Elasticsearch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx配置二级域名访问本机不同项目</title>
+    <link href="http://example.com/2020/12/24/2.Nginx%E9%85%8D%E7%BD%AE%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E6%9C%AC%E6%9C%BA%E4%B8%8D%E5%90%8C%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://example.com/2020/12/24/2.Nginx%E9%85%8D%E7%BD%AE%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E6%9C%AC%E6%9C%BA%E4%B8%8D%E5%90%8C%E9%A1%B9%E7%9B%AE/</id>
+    <published>2020-12-24T02:30:12.000Z</published>
+    <updated>2021-01-14T04:28:57.265Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;nginx配置二级域名访问本机不同项目&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#nginx配置二级域名访问本机不同项目&quot;&gt;&lt;/a&gt; Nginx配置二级域名访问本机不同项目&lt;/h1&gt;
+&lt;h2 id=&quot;1在域名管理控制台添加二级域名解</summary>
+      
+    
+    
+    
+    <category term="Nginx" scheme="http://example.com/categories/Nginx/"/>
+    
+    
+    <category term="Nginx" scheme="http://example.com/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx负载均衡配置</title>
+    <link href="http://example.com/2020/12/24/1.Nginx%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/"/>
+    <id>http://example.com/2020/12/24/1.Nginx%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</id>
+    <published>2020-12-24T02:23:12.000Z</published>
+    <updated>2021-01-14T04:28:50.409Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;nginx负载均衡&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#nginx负载均衡&quot;&gt;&lt;/a&gt; Nginx负载均衡&lt;/h1&gt;
+&lt;h2 id=&quot;1nginx负载均衡配置&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; hre</summary>
+      
+    
+    
+    
+    <category term="Nginx" scheme="http://example.com/categories/Nginx/"/>
+    
+    
+    <category term="Nginx" scheme="http://example.com/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cookie和Session</title>
+    <link href="http://example.com/2020/11/21/02-cookie%E5%92%8Csession/"/>
+    <id>http://example.com/2020/11/21/02-cookie%E5%92%8Csession/</id>
+    <published>2020-11-21T02:23:12.000Z</published>
+    <updated>2021-01-14T04:27:02.087Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;cookie和session&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cookie和session&quot;&gt;&lt;/a&gt; Cookie和Session&lt;/h1&gt;
+&lt;h2 id=&quot;http无状态&quot;&gt;&lt;a class=&quot;markdownIt-A</summary>
+      
+    
+    
+    
+    <category term="爬虫" scheme="http://example.com/categories/%E7%88%AC%E8%99%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>多线程相关原理</title>
+    <link href="http://example.com/2020/11/21/03-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/"/>
+    <id>http://example.com/2020/11/21/03-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/</id>
+    <published>2020-11-21T02:23:12.000Z</published>
+    <updated>2021-01-14T04:27:06.874Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;多线程相关原理&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#多线程相关原理&quot;&gt;&lt;/a&gt; 多线程相关原理&lt;/h1&gt;
+&lt;h2 id=&quot;进程和线程&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#进程和线程&quot;&gt;&lt;/</summary>
+      
+    
+    
+    
+    <category term="爬虫" scheme="http://example.com/categories/%E7%88%AC%E8%99%AB/"/>
+    
+    
+    <category term="多线程" scheme="http://example.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python实现多线程</title>
+    <link href="http://example.com/2020/11/21/04-python%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    <id>http://example.com/2020/11/21/04-python%E5%A4%9A%E7%BA%BF%E7%A8%8B/</id>
+    <published>2020-11-21T02:23:12.000Z</published>
+    <updated>2021-01-14T04:27:15.810Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;python实现多线程&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#python实现多线程&quot;&gt;&lt;/a&gt; Python实现多线程&lt;/h1&gt;
+&lt;p&gt;Python 中自带实现多线程的模块：threading&lt;/p&gt;
+&lt;h2 id=&quot;进程和线</summary>
+      
+    
+    
+    
+    <category term="爬虫" scheme="http://example.com/categories/%E7%88%AC%E8%99%AB/"/>
+    
+    
+    <category term="Python" scheme="http://example.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python实现多进程</title>
+    <link href="http://example.com/2020/11/21/05-python%E5%A4%9A%E8%BF%9B%E7%A8%8B/"/>
+    <id>http://example.com/2020/11/21/05-python%E5%A4%9A%E8%BF%9B%E7%A8%8B/</id>
+    <published>2020-11-21T02:23:12.000Z</published>
+    <updated>2021-01-14T04:27:20.235Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;python实现多进程&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#python实现多进程&quot;&gt;&lt;/a&gt; Python实现多进程&lt;/h1&gt;
+&lt;p&gt;Python 中的多线程是不能很好发挥多核优势的，如果想要发挥多核优势，最好还是使用多进程</summary>
+      
+    
+    
+    
+    <category term="爬虫" scheme="http://example.com/categories/%E7%88%AC%E8%99%AB/"/>
+    
+    
+    <category term="Python" scheme="http://example.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬虫相关概念</title>
+    <link href="http://example.com/2020/11/20/01-%E7%88%AC%E8%99%AB%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/"/>
+    <id>http://example.com/2020/11/20/01-%E7%88%AC%E8%99%AB%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</id>
+    <published>2020-11-20T02:23:12.000Z</published>
+    <updated>2021-01-14T04:26:57.611Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;爬虫相关概念&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#爬虫相关概念&quot;&gt;&lt;/a&gt; 爬虫相关概念&lt;/h1&gt;
+&lt;h2 id=&quot;常见反爬措施&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#常见反爬措施&quot;&gt;&lt;/a</summary>
+      
+    
+    
+    
+    <category term="爬虫" scheme="http://example.com/categories/%E7%88%AC%E8%99%AB/"/>
+    
+    
+    <category term="爬虫" scheme="http://example.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Springboot整合Redis</title>
+    <link href="http://example.com/2020/11/01/Springboot%E6%95%B4%E5%90%88Redis/"/>
+    <id>http://example.com/2020/11/01/Springboot%E6%95%B4%E5%90%88Redis/</id>
+    <published>2020-11-01T04:23:12.000Z</published>
+    <updated>2021-01-14T04:29:20.529Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;springboot整合redis&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#springboot整合redis&quot;&gt;&lt;/a&gt; Springboot整合Redis&lt;/h1&gt;
+&lt;p&gt;前提：安装Redis，略。&lt;/p&gt;
+&lt;p&gt;Spring</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="http://example.com/categories/Java/"/>
+    
+    
+    <category term="Springboot" scheme="http://example.com/tags/Springboot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis序列化LocalDateTime报错</title>
+    <link href="http://example.com/2020/11/01/Redis%E5%BA%8F%E5%88%97%E5%8C%96LocalDateTime%E6%8A%A5%E9%94%99/"/>
+    <id>http://example.com/2020/11/01/Redis%E5%BA%8F%E5%88%97%E5%8C%96LocalDateTime%E6%8A%A5%E9%94%99/</id>
+    <published>2020-11-01T03:23:12.000Z</published>
+    <updated>2021-01-14T04:29:30.975Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;redis序列化localdatetime报错&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#redis序列化localdatetime报错&quot;&gt;&lt;/a&gt; Redis序列化LocalDateTime报错&lt;/h1&gt;
+&lt;h2 id=&quot;背景&quot;&gt;</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="http://example.com/categories/Java/"/>
+    
+    
+    <category term="Redis" scheme="http://example.com/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LocalDateTime日期转换错误</title>
+    <link href="http://example.com/2020/11/01/LocalDateTime%E6%97%A5%E6%9C%9F%E8%BD%AC%E6%8D%A2%E9%94%99%E8%AF%AF/"/>
+    <id>http://example.com/2020/11/01/LocalDateTime%E6%97%A5%E6%9C%9F%E8%BD%AC%E6%8D%A2%E9%94%99%E8%AF%AF/</id>
+    <published>2020-11-01T02:23:12.000Z</published>
+    <updated>2021-01-15T02:32:25.603Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;localdatetime日期转换错误json-parse-error-cannot-deserialize-value-of-type-javatimelocaldatetime&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#loca</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="http://example.com/categories/Java/"/>
+    
+    
+    <category term="Springboot" scheme="http://example.com/tags/Springboot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为什么使用消息队列？</title>
+    <link href="http://example.com/2020/09/25/1%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    <id>http://example.com/2020/09/25/1%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</id>
+    <published>2020-09-25T02:23:12.000Z</published>
+    <updated>2021-01-14T04:27:26.770Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;为什么使用消息队列&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#为什么使用消息队列&quot;&gt;&lt;/a&gt; 为什么使用消息队列？&lt;/h1&gt;
+&lt;p&gt;Question：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;为什么使用消息队列？业务场景&lt;/li&gt;
+&lt;li&gt;有什么</summary>
+      
+    
+    
+    
+    <category term="消息队列" scheme="http://example.com/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+    
+    <category term="消息队列" scheme="http://example.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何保证消息队列的高可用？</title>
+    <link href="http://example.com/2020/09/25/2%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%9A%84%E9%AB%98%E5%8F%AF%E7%94%A8/"/>
+    <id>http://example.com/2020/09/25/2%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%9A%84%E9%AB%98%E5%8F%AF%E7%94%A8/</id>
+    <published>2020-09-25T02:23:12.000Z</published>
+    <updated>2021-01-14T04:27:38.649Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;如何保证消息队列的高可用&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#如何保证消息队列的高可用&quot;&gt;&lt;/a&gt; 如何保证消息队列的高可用？&lt;/h1&gt;
+&lt;h2 id=&quot;rabbitmq的高可用&quot;&gt;&lt;a class=&quot;markdownIt-A</summary>
+      
+    
+    
+    
+    <category term="消息队列" scheme="http://example.com/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+    
+    <category term="消息队列" scheme="http://example.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何保证消息不被重复消费？（幂等性）</title>
+    <link href="http://example.com/2020/09/25/3%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E8%A2%AB%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9/"/>
+    <id>http://example.com/2020/09/25/3%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E8%A2%AB%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9/</id>
+    <published>2020-09-25T02:23:12.000Z</published>
+    <updated>2021-01-14T04:28:08.065Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;如何保证消息不被重复消费幂等性&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#如何保证消息不被重复消费幂等性&quot;&gt;&lt;/a&gt; 如何保证消息不被重复消费？（幂等性）&lt;/h1&gt;
+&lt;h2 id=&quot;可能会有哪些重复消费的问题&quot;&gt;&lt;a class=&quot;</summary>
+      
+    
+    
+    
+    <category term="消息队列" scheme="http://example.com/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+    
+    <category term="消息队列" scheme="http://example.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何保证消息的可靠性传输？</title>
+    <link href="http://example.com/2020/09/25/4%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7%E4%BC%A0%E8%BE%93/"/>
+    <id>http://example.com/2020/09/25/4%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7%E4%BC%A0%E8%BE%93/</id>
+    <published>2020-09-25T02:23:12.000Z</published>
+    <updated>2021-01-14T04:28:12.866Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;如何保证消息的可靠性传输&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#如何保证消息的可靠性传输&quot;&gt;&lt;/a&gt; 如何保证消息的可靠性传输？&lt;/h1&gt;
+&lt;h2 id=&quot;如何处理消息丢失&quot;&gt;&lt;a class=&quot;markdownIt-Ancho</summary>
+      
+    
+    
+    
+    <category term="消息队列" scheme="http://example.com/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+    
+    <category term="消息队列" scheme="http://example.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何保证消息的顺序性？</title>
+    <link href="http://example.com/2020/09/25/5%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%80%A7/"/>
+    <id>http://example.com/2020/09/25/5%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%80%A7/</id>
+    <published>2020-09-25T02:23:12.000Z</published>
+    <updated>2021-01-14T04:28:17.971Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;如何保证消息的顺序性&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#如何保证消息的顺序性&quot;&gt;&lt;/a&gt; 如何保证消息的顺序性？&lt;/h1&gt;
+&lt;h2 id=&quot;rabbitmq&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; hre</summary>
+      
+    
+    
+    
+    <category term="消息队列" scheme="http://example.com/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+    
+    <category term="消息队列" scheme="http://example.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+</feed>
